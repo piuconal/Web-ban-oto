@@ -1,0 +1,120 @@
+body{
+    width: auto;
+    margin: 0px auto;
+}
+
+.menu_top{
+    background: #090705;
+    height: 150px;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+}
+
+.menu_top ul {
+    padding: 0px;
+}
+
+.menu_top .menu_top_left li{
+    margin-top: 40px;
+    margin-left: 40px;
+    list-style: none;
+    float: left;
+}
+
+.menu_top .menu_top_right li{
+    margin-top: 40px;
+    margin-right: 40px;
+    list-style: none;
+    float: right;
+}
+
+.menu_top img{
+    padding-left: 150px;
+}
+
+.menu_top ul li a{
+    text-decoration: none;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(238, 234, 234);
+    padding: 0px 20px 0px 20px;
+}
+
+.menu_top ul li:hover{
+    background: #1b9b9b;
+}
+
+.banner iframe{
+    width: 1519.200px;
+    height: 855.55px;
+    padding-top: 150px;
+    background: #090705;
+}
+
+.hot{
+    background: url("image/hot.png");
+    height: 500px;
+}
+
+
+.hot .content .title_solgan{
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Tahoma';
+    font-size: 20px;
+    padding-top: 15px;
+}
+
+.hot .content .title_name{
+    color: aliceblue;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 20px;
+}
+
+.main .gioithieu_left{
+    background: green;
+    width: 400px;
+    min-height: 400px;
+    margin: 80px 80px 80px 80px;
+    float: left;
+}
+
+.main .gioithieu_right{
+    background: blue;
+    width: 400px;
+    min-height: 400px;
+    margin: 80px 80px 80px 80px;
+    float: right;
+}
+
+.about{
+    background: rgb(75, 40, 139);
+    height: 300px;
+    clear: left;
+}
+
+.demo .youtube_demo{
+    background: rgb(128, 0, 96);
+    width: 400px;
+    float: left;
+    min-height: 400px;
+    margin: 80px 80px 80px 80px;
+}
+
+.demo .video_demo{
+    background: rgb(28, 149, 165);
+    width: 400px;
+    float: right;
+    min-height: 400px;
+    margin: 80px 80px 80px 80px;
+}
+
+.footer{
+    background: rgb(16, 15, 17);
+    height: 300px;
+    clear: left;
+}
+

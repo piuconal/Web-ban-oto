@@ -31,6 +31,10 @@ body{
 
 .menu_top img{
     padding-left: 150px;
+    width: 130px;
+}
+.menu_top img :hover{
+    transform: scale(1.1);
 }
 
 .menu_top ul li a{
@@ -44,7 +48,12 @@ body{
 
 .menu_top ul li:hover{
     background: #1b9b9b;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
 }
+
 
 .banner iframe{
     width: 1519.200px;
@@ -55,16 +64,15 @@ body{
 
 .hot{
     background: url("image/hot.png");
-    height: 500px;
+    height: 600px;
 }
-
 
 .hot .content .title_solgan{
     color: aliceblue;
     text-align: center;
     font-family: 'Tahoma';
     font-size: 20px;
-    padding-top: 15px;
+    padding-top: 100px;
 }
 
 .hot .content .title_name{
@@ -74,12 +82,139 @@ body{
     padding-top: 20px;
 }
 
+.car_hot a{
+    font-family: 'Tahoma';
+    font-style: italic;
+    font-size: 14px;
+    color: rgb(24, 126, 216);
+}
+
+.car_hot .car1 iframe{
+    width: 300px;
+    min-height: 200px;
+    margin: 20px 20px 20px 20px;
+}
+.car_hot .car1 .title_car1{
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Tahoma';
+    font-size: 16px;
+    margin-left: 70px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+
+}
+.car_hot .car1 .content_car1 {
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Tahoma';
+    margin-left: 70px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.car_hot .car2 iframe{
+    width: 300px;
+    min-height: 200px;
+    margin: 20px 20px 20px 20px;
+}
+.car_hot .car2 .title_car1{
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Tahoma';
+    font-size: 16px;
+    margin-left: 70px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+
+}
+.car_hot .car2 .content_car1 {
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Tahoma';
+    margin-left: 70px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.car_hot .car3 iframe{
+    width: 300px;
+    min-height: 200px;
+    margin: 20px 20px 20px 20px;
+}
+.car_hot .car3 .title_car1{
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Tahoma';
+    font-size: 16px;
+    margin-left: 70px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+
+}
+.car_hot .car3 .content_car1 {
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Tahoma';
+    margin-left: 70px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.car_hot .car4 iframe{
+    width: 300px;
+    min-height: 200px;
+    margin: 20px 20px 20px 20px;
+}
+.car_hot .car4 .title_car1{
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Tahoma';
+    font-size: 16px;
+    margin-left: 70px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+
+}
+.car_hot .car4 .content_car1 {
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Tahoma';
+    margin-left: 70px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.car_hot{
+    display: flex;
+    justify-content: center;
+}
+
 .main .gioithieu_left{
     background: green;
     width: 400px;
     min-height: 400px;
     margin: 80px 80px 80px 80px;
-    float: left;
 }
 
 .main .gioithieu_right{
@@ -87,7 +222,11 @@ body{
     width: 400px;
     min-height: 400px;
     margin: 80px 80px 80px 80px;
-    float: right;
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
 }
 
 .about{
@@ -99,7 +238,6 @@ body{
 .demo .youtube_demo{
     background: rgb(128, 0, 96);
     width: 400px;
-    float: left;
     min-height: 400px;
     margin: 80px 80px 80px 80px;
 }
@@ -107,9 +245,13 @@ body{
 .demo .video_demo{
     background: rgb(28, 149, 165);
     width: 400px;
-    float: right;
     min-height: 400px;
     margin: 80px 80px 80px 80px;
+}
+
+.demo{
+    display: flex;
+    justify-content: space-between;
 }
 
 .footer{
@@ -118,3 +260,7 @@ body{
     clear: left;
 }
 
+
+@media(max-width:400px) {
+    
+}

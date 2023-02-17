@@ -1,78 +1,284 @@
 body{
     width: auto;
     margin: 0px auto;
-    background-color: #151b22;
 }
 
-.search img{
-    width: 100%;
+.menu_top{
+    background: #090705;
+    height: 150px;
     position: fixed;
+    left: 0px;
+    right: 0px;
 }
 
-.thoisu a{
-    margin-top: 12%;
-    margin-left: 30%;
-    color: #38d6eb;
-    float:left;
-    font-size: 14px;
-    text-decoration: none;
+.menu_top ul {
+    padding: 0px;
 }
 
-.thoisu h1{
-    margin-top: 12%;
-    margin-right: 30%;
-    color: #bdbdbd;
-    float:right;
-    font-size: 14px;
+
+.menu_top .menu_top_left li{
+    margin-top: 40px;
+    margin-left: 40px;
+    list-style: none;
+    float: left;
 }
 
-.thoisu .content h1{
-    margin-top: 1%;
-    font-size: 32px;
-    color: #fff;
-    margin-left: 30%;
-    margin-right: 35%;
-}
-
-.thoisu .content1 h1{
-    margin-top: 1%;
-    font-size: 16px;
-    color: #fff;
-    margin-left: 30%;
-    margin-right: 30%;
-}
-
-.img1 img{
-    margin-left: 11%;
-}
-
-.thoisu .content2 h1{
-    margin-top: 1%;
-    font-size: 16px;
-    color: #fff;
-    margin-left: 30%;
-    margin-right: 28%;
-}
-.thoisu .content2 a{
-    font-size: 16px;
+.menu_top .menu_top_right li{
+    margin-top: 40px;
+    margin-right: 40px;
+    list-style: none;
     float: right;
-    margin-right: 32.4%;
-    margin-top: -1.96%;
+}
+
+.menu_top img{
+    margin-left: 43%;
+    margin-top: -5%;
+    width: 110px;
+    border-radius:50%;
+}
+
+.menu_top ul li a{
     text-decoration: none;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(238, 234, 234);
+    padding: 0px 20px 0px 20px;
 }
 
-.thoisu .content2 h2{
-    font-size: 16px;
-    color: #fff;
-    margin-left: 30%;
-    margin-right: 28%;
+.menu_top ul li:hover{
+    background: #1b9b9b;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
 }
 
-.img2 img{
-    margin-left: 11%;
-}
 
-.cmt img{
+.banner iframe{
     width: 100%;
+    height: 100%;
+    padding-top: 150px;
+    background: #090705;
 }
 
+.hot{
+    background: url("image/hot.png");
+    height: 600px;
+}
+
+.hot .content .title_solgan{
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Tahoma';
+    font-size: 20px;
+    padding-top: 100px;
+}
+
+.hot .content .title_name{
+    color: aliceblue;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 20px;
+}
+
+.car_hot a{
+    font-family: 'Tahoma';
+    font-style: italic;
+    font-size: 14px;
+    color: rgb(24, 126, 216);
+}
+
+.car_hot .car1 iframe{
+    width: 300px;
+    min-height: 200px;
+    margin: 20px 20px 20px 20px;
+}
+.car_hot .car1 .title_car1{
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Tahoma';
+    font-size: 16px;
+    margin-left: 70px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+
+}
+.car_hot .car1 .content_car1 {
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Tahoma';
+    margin-left: 70px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.car_hot .car2 iframe{
+    width: 300px;
+    min-height: 200px;
+    margin: 20px 20px 20px 20px;
+}
+.car_hot .car2 .title_car1{
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Tahoma';
+    font-size: 16px;
+    margin-left: 70px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+
+}
+.car_hot .car2 .content_car1 {
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Tahoma';
+    margin-left: 70px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.car_hot .car3 iframe{
+    width: 300px;
+    min-height: 200px;
+    margin: 20px 20px 20px 20px;
+}
+.car_hot .car3 .title_car1{
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Tahoma';
+    font-size: 16px;
+    margin-left: 70px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+
+}
+.car_hot .car3 .content_car1 {
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Tahoma';
+    margin-left: 70px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.car_hot .car4 iframe{
+    width: 300px;
+    min-height: 200px;
+    margin: 20px 20px 20px 20px;
+}
+.car_hot .car4 .title_car1{
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Tahoma';
+    font-size: 16px;
+    margin-left: 70px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+
+}
+.car_hot .car4 .content_car1 {
+    background-color: rgb(51, 70, 70);
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Tahoma';
+    margin-left: 70px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.car_hot{
+    display: flex;
+    justify-content: center;
+}
+
+.main .gioithieu_left{
+    background: green;
+    width: 400px;
+    min-height: 400px;
+    margin: 80px 80px 80px 80px;
+}
+
+.main .gioithieu_right{
+    background: blue;
+    width: 400px;
+    min-height: 400px;
+    margin: 80px 80px 80px 80px;
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.about{
+    background: rgb(75, 40, 139);
+    height: 300px;
+    clear: left;
+}
+
+.demo .youtube_demo{
+    background: rgb(128, 0, 96);
+    width: 400px;
+    min-height: 400px;
+    margin: 80px 80px 80px 80px;
+}
+
+.demo .video_demo{
+    background: rgb(28, 149, 165);
+    width: 400px;
+    min-height: 400px;
+    margin: 80px 80px 80px 80px;
+}
+
+.demo{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media(max-width:400px) {
+    
+}
+
+
+.footer{
+    background: url("image/footer.png");
+    height: 37%;
+}
+
+.footer .fanpage{
+    margin-left: 20%;
+    padding-top: 7%;
+}
+
+.footer .phone{
+    margin-left: 20%;
+}
+
+.footer .add{
+    margin-left: 20%;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}

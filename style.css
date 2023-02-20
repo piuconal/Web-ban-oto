@@ -5,11 +5,12 @@ body{
 
 .menu_top{
     background: #090705;
-    height: 150px;
-    position: fixed;
+    height: 19%;
+    position: sticky;
     left: 0px;
     right: 0px;
     box-shadow: -10px 0 10px rgb(0, 255, 213); 
+    top: -2%;
 }
 
 .menu_top:hover{
@@ -22,15 +23,15 @@ body{
 }
 
 .menu_top .menu_top_left li{
-    margin-top: 40px;
-    margin-left: 40px;
+    margin-top: 3%;
+    margin-left: 3%;
     list-style: none;
     float: left;
 }
 
 .menu_top .menu_top_right li{
-    margin-top: 40px;
-    margin-right: 40px;
+    margin-top: 3%;
+    margin-right: 3%;
     list-style: none;
     float: right;
 }
@@ -38,7 +39,7 @@ body{
 .menu_top img{
     margin-left: 43%;
     margin-top: -5%;
-    width: 110px;
+    width: 8%;
     border-radius:50%;
 }
 
@@ -58,24 +59,22 @@ body{
 
 .menu_top ul li:hover{
     background: #1b9b9b;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;
-    transition: linear 0.5s; 
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-top-left-radius: 100%;
+    transition: linear 0.2s; 
 }
-
 
 .banner iframe{
     width: 100%;
     height: 100%;
-    padding-top: 150px;
     background: #090705;
 }
 
 .hot{
     background: url("image/hot.png");
-    height: 600px;
+    height: 80%;
 }
 
 .hot .content .title_solgan{
@@ -83,14 +82,14 @@ body{
     text-align: center;
     font-family: 'Tahoma';
     font-size: 20px;
-    padding-top: 100px;
+    padding-top: 6%;
 }
 
 .hot .content .title_name{
     color: aliceblue;
     text-align: center;
     font-size: 40px;
-    padding-top: 20px;
+    padding-top: 2%;
 }
 
 .car_hot a{
@@ -101,8 +100,8 @@ body{
 }
 
 .car_hot .car1 iframe{
-    width: 300px;
-    min-height: 200px;
+    width: 86%;
+    min-height: 70%;
     margin: 20px 20px 20px 20px;
 }
 .car_hot .car1 .title_car1{
@@ -130,11 +129,11 @@ body{
 }
 
 .car_hot .car2 iframe{
-    width: 300px;
-    min-height: 200px;
+    width: 86%;
+    min-height: 70%;
     margin: 20px 20px 20px 20px;
 }
-.car_hot .car2 .title_car1{
+.car_hot .car2 .title_car2{
     background-color: rgb(51, 70, 70);
     width: 200px;
     height: 40px;
@@ -147,7 +146,7 @@ body{
     border-top-left-radius: 50px;
 
 }
-.car_hot .car2 .content_car1 {
+.car_hot .car2 .content_car2 {
     background-color: rgb(51, 70, 70);
     width: 200px;
     height: 40px;
@@ -159,11 +158,11 @@ body{
 }
 
 .car_hot .car3 iframe{
-    width: 300px;
-    min-height: 200px;
+    width: 86%;
+    min-height: 70%;
     margin: 20px 20px 20px 20px;
 }
-.car_hot .car3 .title_car1{
+.car_hot .car3 .title_car3{
     background-color: rgb(51, 70, 70);
     width: 200px;
     height: 40px;
@@ -176,7 +175,7 @@ body{
     border-top-left-radius: 50px;
 
 }
-.car_hot .car3 .content_car1 {
+.car_hot .car3 .content_car3{
     background-color: rgb(51, 70, 70);
     width: 200px;
     height: 40px;
@@ -188,11 +187,11 @@ body{
 }
 
 .car_hot .car4 iframe{
-    width: 300px;
-    min-height: 200px;
+    width: 86%;
+    min-height: 70%;
     margin: 20px 20px 20px 20px;
 }
-.car_hot .car4 .title_car1{
+.car_hot .car4 .title_car4{
     background-color: rgb(51, 70, 70);
     width: 200px;
     height: 40px;
@@ -205,7 +204,7 @@ body{
     border-top-left-radius: 50px;
 
 }
-.car_hot .car4 .content_car1 {
+.car_hot .car4 .content_car4{
     background-color: rgb(51, 70, 70);
     width: 200px;
     height: 40px;
@@ -296,4 +295,9 @@ body{
     text-decoration: none;
     color: #fff;
     font-size: 20px;
+}
+
+.footer :hover{
+    transform: scale(1.0);
+    box-shadow: -10px 0 10px rgb(80, 176, 200);
 }

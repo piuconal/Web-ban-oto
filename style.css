@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
     width: auto;
     margin: 0px auto;
@@ -11,6 +15,7 @@ body{
     right: 0px;
     box-shadow: -10px 0 10px rgb(0, 255, 213); 
     top: -2%;
+    z-index: 1;
 }
 
 .menu_top:hover{
@@ -221,51 +226,198 @@ body{
 }
 
 .main .gioithieu_left{
-    background: green;
+    width: 50%;
+    min-height: 400px;
+    margin: 80px 80px 80px 80px;
+}
+
+.main .gioithieu_left h1{
+    color: #fff;
+    font-style: italic;
+}
+
+.main .gioithieu_left h2{
+    color: #4195c9;
+    font-style: italic;
+    font-family: 'Times New Roman';
+}
+
+.main .gioithieu_left a{
+    color: #c6dae7;
+    width: 12%;
+    font-family: 'Times New Roman';
+    border-style: solid;
+    text-decoration: none;
+}
+
+.main .gioithieu_right{
     width: 400px;
     min-height: 400px;
     margin: 80px 80px 80px 80px;
 }
 
-.main .gioithieu_right{
-    background: blue;
+.main .gioithieu_right .slider{
     width: 400px;
-    min-height: 400px;
-    margin: 80px 80px 80px 80px;
+    height: 520px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.main .gioithieu_right .slider .sliders{
+    width: 520%;
+    height: 520px;
+    display: flex;
+}
+
+.main .gioithieu_right .slider .sliders input{
+    display: none;
+}
+
+.main .gioithieu_right .slider .slide{
+    width: 20%;
+    transition: 2s;
+}
+
+.navigation-manual{
+    position: absolute;
+    width: 400px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid #4195c9;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 10px;   
+}
+
+.manual-btn:hover{
+    background: #4195c9;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 400px;
+    justify-content: center;
+    margin-top: 460px;
+}
+
+.navigation-auto div{
+    border: 2px solid #4195c9;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div :not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #4195c9;
+}    
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #4195c9;
+}   
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #4195c9;
+}   
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background: #4195c9;
+}   
+
+.main .gioithieu_right .slider .sliders img{
+    width: 400px;
+    height: 520px;
 }
 
 .main{
     display: flex;
     justify-content: space-between;
+    background: url("image/hot.png");
 }
 
-.about img{
+.about{
+    background: url("image/lamborghini.jpg");
+    background-size: cover;
     height: 65%;
     width: 100%;
+    background-repeat: no-repeat;
 }
+
 .about:hover{
     transform: scale(1.03);
     box-shadow: -10px 0 10px rgb(99, 211, 230);
     transition: ease 1s;    
 }
 
-.demo .youtube_demo{
-    background: rgb(128, 0, 96);
-    width: 400px;
-    min-height: 400px;
-    margin: 80px 80px 80px 80px;
+.demo .youtube_demo img{
+    width: 600px;
+    height: 500px;
+    margin: 10px 80px 80px 80px;
 }
 
-.demo .video_demo{
-    background: rgb(28, 149, 165);
-    width: 400px;
-    min-height: 400px;
-    margin: 80px 80px 80px 80px;
+.demo .youtube a{
+    text-decoration: none;
+    color: #fff;
+    font-style: oblique;
+    font-size: 20px;
+}
+
+.demo .youtube{
+    padding-top: 6%;
+    margin-left: 11%;
+}
+
+.demo .face_demo img{
+    width: 600px;
+    height: 500px;
+    margin: 10px 80px 80px 80px;
+}
+
+.demo .face a{
+    text-decoration: none;
+    color: #fff;
+    font-style: oblique;
+    font-size: 20px;
+}
+
+.demo .face{
+    padding-top: 6%;
+    margin-left: 11%;
 }
 
 .demo{
     display: flex;
     justify-content: space-between;
+    background: url("image/hot.png");
 }
 
 @media(max-width:400px) {
@@ -275,7 +427,7 @@ body{
 
 .footer{
     background: url("image/footer.png");
-    height: 37%;
+    height: 40%;
 }
 
 .footer .fanpage{

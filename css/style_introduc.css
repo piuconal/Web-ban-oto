@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+body{
+    background-color: #090705;
+}
+/* menu */
+.menu_top{
+    background: #090705;
+    height: 19%;
+    position: sticky;
+    left: 0px;
+    right: 0px;
+    box-shadow: -10px 0 10px rgb(0, 255, 213); 
+    top: -2%;
+    z-index: 1;
+}
+
+.menu_top:hover{
+    transform: scale(1.0);
+    box-shadow: -10px 0 10px rgba(0,255,0,1);
+}
+
+.menu_top ul {
+    padding: 0px;
+}
+
+.menu_top .menu_top_left li{
+    margin-top: 3%;
+    margin-left: 3%;
+    list-style: none;
+    float: left;
+}
+
+.menu_top .menu_top_right li{
+    margin-top: 3%;
+    margin-right: 3%;
+    list-style: none;
+    float: right;
+}
+
+.menu_top img{
+    margin-left: 43%;
+    margin-top: -5%;
+    width: 8%;
+    border-radius:50%;
+}
+
+.menu_top ul li a{
+    text-decoration: none;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: rgb(238, 234, 234);
+    padding: 0px 20px 0px 20px;
+}
+
+.menu_top ul li:hover{
+    background: #1b9b9b;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-top-left-radius: 100%;
+    transition: linear 0.2s; 
+}
+
+/* end menu */
+
+
+
+header {
+    display: flex;
+    padding: 95px 50px;
+    height: 50px;
+    align-items: right;
+}
+
+section {
+    padding-top: 70px;
+    text-align: center;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline-block;
+}
+
+.picture-list {
+    padding-left: 12px;
+    display: inline-block;
+}
+
+.introduction {
+    font-size: 50px;
+    padding-bottom: 45px;
+}
+
+.introduction-text{
+    padding-left: 150px;
+    padding-right: 150px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.show {
+    display: inline-block;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.show-inf{
+    float: left;
+    display: block;
+    width: 40%;
+    padding-top: 20px;
+    padding-left: 70px;
+    padding-right: 50px;
+}
+
+.img2 {
+    display: flex;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.show-header{
+    text-align: center;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 25px;
+}
+
+.show-text{
+    text-align: left;
+    line-height: 1.5;
+    padding-left: 35px;
+    padding-right: 15px
+}
+
+.show .show-text ul{
+    font-size: 15px;
+}
+
+.show .show-text ul span{
+    font-size: 15px;
+}
+
+.mid-text{
+    text-align: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.show-inf-1{
+    display: inline-block;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 75px;
+}
+
+.img3 {
+    float: left;
+    width: 50%;
+    text-align: right;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.show-header-1{
+    text-align: center;
+    padding-bottom: 22px;
+    font-size: 25px;
+}
+
+.show-text-1{
+    text-align: left;
+    line-height: 1.5;
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+.show-text-1 ul{
+    padding-top: 10px;
+}
+
+.show .show-text ul li{
+    list-style: square inside;
+}
+
+.col-nine {
+    float: left;
+    width: 30.3333%;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.col-nine:hover .place-img {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.place-img {
+    width: 100%;
+    height: 290px;
+    display: block;
+}
+
+.col-body {
+    background-color: #090705;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.col-heading {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.col-time {
+    margin-top: 10px;
+    color: #757575;
+}
+
+.col-desc {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.map{
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.footer img{
+    width: 100%;
+}
+
+.footer .fanpage{
+    position: absolute;
+    margin-left: 20%;
+    margin-top: -12.5%;
+}
+
+.footer .phone{
+    position: absolute;
+    margin-left: 20%;
+    margin-top: -11%;
+}
+
+.footer .add{
+    position: absolute;
+    margin-left: 20%;
+    margin-top: -9.5%;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}

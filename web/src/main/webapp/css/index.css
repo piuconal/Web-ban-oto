@@ -1,56 +1,98 @@
 @charset "UTF-8";
-*{
-	margin:0px;
-	padding:0px;
-	box-sizing :border-box;
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
 }
-.row{
-	width:100%;
+
+.row {
+	width: 100%;
 	height: auto;
 	display: flex;
-	flex-wrap:wrap;
+	flex-wrap: wrap;
 }
-.box-content{
-	width: 30%;
-	height: auto;
-}
-@media(min-width:576px){
-	.box-content{
-	    width:45%;
-    }
-}
-.card{
-	width: 100%;
-}
-.card-img-top{
-	height: 50%;
-	width: 90%;
-	object-fit:contain;
-}
-.card-body{
-	width: 90%;
-}
-.card-title{
-	font-style:18px;
-}
-.price, .category{
-	font-style:15px;
-	color:red;
-	display: block;
-}
-.card-btn{
-	display:flex;
-	justify-content: space-between;
-	align-items: center;
-	display: block;
-}
-.buy-btn, .add-btn{
-	background: blue;
-	color:white;
-	width: 50px;
-	height: 40px;
-	border-radius: 4px;
-}
-a{
-	text-decoration: none;
+
+@media ( min-width :576px) {
+	/* Kiểu cho phần tử .card-header */
+	.card-header {
+		background-color: #f1f1f1;
+		padding: 10px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	/* Kiểu cho phần tử .box-content */
+	.box-content {
+		width: 25%;
+		padding: 10px;
+		float: left;
+	}
+
+	/* Kiểu cho phần tử .card */
+	.card {
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		padding: 10px;
+		background-color: #fff;
+	}
+
+	/* Kiểu cho phần tử .card-img-top */
+	.card-img-top {
+		width: 100%;
+		height: 200px; /* Đặt kích thước cố định cho chiều cao của ảnh */
+		object-fit: cover;
+		/* Đảm bảo ảnh sẽ được hiển thị đầy đủ và không bị kéo dãn */
+		border-radius: 5px;
+	}
+
+	/* Kiểu cho phần tử .card-title */
+	.card-title {
+		font-size: 18px;
+		font-weight: bold;
+		margin-top: 10px;
+		margin-bottom: 5px;
+	}
+
+	/* Kiểu cho phần tử .price */
+	.price {
+		font-size: 16px;
+		color: #007bff;
+		margin-bottom: 10px;
+	}
+
+	/* Kiểu cho phần tử .category */
+	.category {
+		font-size: 14px;
+		color: #666;
+		margin-bottom: 10px;
+	}
+
+	/* Kiểu cho phần tử .card-btn */
+	.card-btn {
+		margin-top: 10px;
+	}
+
+	/* Kiểu cho phần tử .add-btn và .buy-btn */
+	.add-btn, .buy-btn {
+		display: inline-block;
+		padding: 5px 10px;
+		background-color: #007bff;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 3px;
+		margin-right: 5px;
+	}
+
+	/* Kiểu khi rê chuột qua .add-btn và .buy-btn */
+	.add-btn:hover, .buy-btn:hover {
+		background-color: #0056b3;
+	}
+
+	/* Xóa float cho phần tử .box-content */
+	.clearfix::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }

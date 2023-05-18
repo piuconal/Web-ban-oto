@@ -1,37 +1,50 @@
 @charset "UTF-8";
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
-.navbar .container{
-    position: relative;
-    display: flex;
-    margin:20px;
-    font-size: 20px;
+
+.container {
+	align-items: center;
+	margin-top: 2%;
 }
-.brand{
-    font-style: none;
-    color: black;
-    display: block;
-    text-decoration: none;
-    padding-right: 40%;
+
+.brand {
+	font-weight: bold;
+	font-size: 24px;
+	margin-right: 20px;
+	text-decoration: none;
+	color: black;
+	float: left;
+	margin-left: 3%;
 }
-ul{
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+
+.navbar-content {
+	display: flex;
+	margin-left: 40%;
 }
-li{
-    margin-right: 15px;
+
+.navbar-nav {
+	display: flex;
+	list-style-type: none;
 }
-li a{
-    text-decoration: none;
-    color: black;
+
+.nav-item {
+	margin: 0 10px;
 }
-li a:hover{
-    color: aqua;
-    transition: 1s;
+
+.nav-item a {
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
+	font-size: 25px;
+	transition: color 0.3s ease;
+	margin-left: 2%;
+	/* Thêm hiệu ứng chuyển đổi màu khi hover */
+}
+
+.nav-item a:hover {
+	color: #f00; /* Màu sắc khi hover */
 }

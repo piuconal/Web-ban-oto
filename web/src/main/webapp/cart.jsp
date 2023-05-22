@@ -1,10 +1,26 @@
 <%@ page import="web.model.*"%>
+<%@page import="web.dao.ProductDao"%>
+<%@page import="web.connection.DbCon"%>
+<%@page import="java.util.*"%>
+<%@page import="java.text.DecimalFormat"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
+DecimalFormat dcf = new DecimalFormat("#.##");
+request.setAttribute("dcf", dcf);
 User auth = (User) request.getSession().getAttribute("auth");
 if (auth != null) {
 	request.setAttribute("auth", auth);
+}
+ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+List<Cart> cartProduct = null;
+if (cart_list != null) {
+	ProductDao pDao = new ProductDao(DbCon.getConnection());
+	cartProduct = pDao.getCartProducts(cart_list);
+	double total = pDao.getTotalCartPrice(cart_list);
+	request.setAttribute("total", total);
+	request.setAttribute("cart_list", cart_list);
 }
 %>
 <!DOCTYPE html>
@@ -14,11 +30,10 @@ if (auth != null) {
 <title>Cart</title>
 <link rel="stylesheet" href="./css/cart.css">
 </head>
-
 <body>
 	<%@include file="includes/nav.jsp"%>
 	<div class="container1">
-		<div class="price">Total Price: $542</div>
+		<div class="price">$ ${(total>0)?dcf.format(total):0}</div>
 		<a class="btn-check-out" href="#">Check out</a>
 		<table class="table">
 			<thead>
@@ -31,22 +46,34 @@ if (auth != null) {
 				</tr>
 			</thead>
 			<tbody>
+				<%
+				if (cart_list != null) {
+					for (Cart c : cartProduct) {
+				%>
 				<tr>
-					<td>Nuoc</td>
-					<td>Nuoc 1</td>
-					<td>$45</td>
+					<td><%=c.getName()%></td>
+					<td><%=c.getCategory()%></td>
+					<td><%= dcf.format(c.getPrice())%></td>
 					<td>
-						<form action="" method="post" class="form">
-							<input type="hidden" name="id" value="1" class="form-input">
-							<div class="form-group">
-								<a class="btn-incre" href="#">+</a> <input type="text"
-									name="quantity" class="form-control" value="1" readonly>
-								<a class="btn-decre" href="#">-</a>
+						<form action="order-now" method="post" class="form-inline">
+						<input type="hidden" name="id" value="<%= c.getId()%>" class="form-input">
+							<div class="form-group d-flex justify-content-between">
+								<a class="btn-decre" href="quantity-inc-dec?action=dec&id=<%=c.getId()%>">-</a>
+								<input type="text" name="quantity" class="form-control"  value="<%=c.getQuantity()%>" readonly> 
+								<a class="btn-incre" href="quantity-inc-dec?action=inc&id=<%=c.getId()%>">+</a> 
 							</div>
+							<button type="submit" class="btn-sm">Buy</button>
 						</form>
 					</td>
-					<td><button>Cancel</button></td>
+					<td>
+						<a href="remove-from-cart?id=<%=c.getId() %>" class="btn-danger">
+							<button>Remove</button>
+						</a>
+					</td>
 				</tr>
+
+				<%
+				}}%>
 			</tbody>
 		</table>
 	</div>

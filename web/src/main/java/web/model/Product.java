@@ -6,7 +6,12 @@ public class Product {
 	private String category;
 	private Double price;
 	private String image;
+	
+	
+	public Product() {
+	}
 
+	
 	public Product(int id, String name, String category, Double price, String image) {
 		super();
 		this.id = id;
@@ -16,9 +21,6 @@ public class Product {
 		this.image = image;
 	}
 
-	public Product() {
-		super();
-	}
 
 	public int getId() {
 		return id;
@@ -65,5 +67,6 @@ public class Product {
 		return "Product [id=" + id + ", name=" + name + ", category=" + category + ", price=" + price + ", image="
 				+ image + "]";
 	}
-
+	
+	
 }

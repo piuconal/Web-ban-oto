@@ -20,6 +20,7 @@
 		padding: 10px;
 		font-size: 20px;
 		font-weight: bold;
+		padding-left: 3%;
 	}
 
 	/* Kiểu cho phần tử .box-content */
@@ -94,5 +95,13 @@
 		content: "";
 		display: table;
 		clear: both;
+	}
+	.search {
+		margin-left: 2%;
+		margin-top: 0.2%;
+	}
+	.searchcar{
+		display: flex;
+		margin-left: 3%;
 	}
 }

@@ -13,95 +13,176 @@
 	flex-wrap: wrap;
 }
 
-@media ( min-width :576px) {
-	/* Kiểu cho phần tử .card-header */
-	.card-header {
-		background-color: #f1f1f1;
-		padding: 10px;
-		font-size: 20px;
-		font-weight: bold;
-		padding-left: 3%;
-	}
+/* Kiểu cho phần tử .box-content */
+.box-content {
+	width: 25%;
+	padding: 30px 10px 20px 10px;
+	float: left;
+}
 
-	/* Kiểu cho phần tử .box-content */
-	.box-content {
-		width: 25%;
-		padding: 10px;
-		float: left;
-	}
+/* Kiểu cho phần tử .card */
+.card {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: #fff;
+}
 
-	/* Kiểu cho phần tử .card */
-	.card {
-		border: 1px solid #ccc;
-		border-radius: 5px;
-		padding: 10px;
-		background-color: #fff;
-	}
+/* Kiểu cho phần tử .card-img-top */
+.card-img-top {
+	width: 100%;
+	height: 200px; /* Đặt kích thước cố định cho chiều cao của ảnh */
+	object-fit: cover;
+	/* Đảm bảo ảnh sẽ được hiển thị đầy đủ và không bị kéo dãn */
+	border-radius: 5px;
+}
 
-	/* Kiểu cho phần tử .card-img-top */
-	.card-img-top {
-		width: 100%;
-		height: 200px; /* Đặt kích thước cố định cho chiều cao của ảnh */
-		object-fit: cover;
-		/* Đảm bảo ảnh sẽ được hiển thị đầy đủ và không bị kéo dãn */
-		border-radius: 5px;
-	}
+/* Kiểu cho phần tử .card-title */
+.card-title {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
 
-	/* Kiểu cho phần tử .card-title */
-	.card-title {
-		font-size: 18px;
-		font-weight: bold;
-		margin-top: 10px;
-		margin-bottom: 5px;
-	}
+/* Kiểu cho phần tử .price */
+.price {
+	font-size: 16px;
+	color: #007bff;
+	margin-bottom: 10px;
+}
 
-	/* Kiểu cho phần tử .price */
-	.price {
-		font-size: 16px;
-		color: #007bff;
-		margin-bottom: 10px;
-	}
+/* Kiểu cho phần tử .category */
+.category {
+	font-size: 14px;
+	color: #666;
+	margin-bottom: 10px;
+}
 
-	/* Kiểu cho phần tử .category */
-	.category {
-		font-size: 14px;
-		color: #666;
-		margin-bottom: 10px;
-	}
+/* Kiểu cho phần tử .card-btn */
+.card-btn {
+	margin-top: 10px;
+}
 
-	/* Kiểu cho phần tử .card-btn */
-	.card-btn {
-		margin-top: 10px;
-	}
+/* Kiểu cho phần tử .add-btn và .buy-btn */
+.add-btn {
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: green;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 3px;
+	margin-right: 5px;
+}
 
-	/* Kiểu cho phần tử .add-btn và .buy-btn */
-	.add-btn, .buy-btn {
-		display: inline-block;
-		padding: 5px 10px;
-		background-color: #007bff;
-		color: #fff;
-		text-decoration: none;
-		border-radius: 3px;
-		margin-right: 5px;
-	}
+.buy-btn {
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: red;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 3px;
+	margin-right: 5px;
+}
 
-	/* Kiểu khi rê chuột qua .add-btn và .buy-btn */
-	.add-btn:hover, .buy-btn:hover {
-		background-color: #0056b3;
-	}
+/* Kiểu khi rê chuột qua .add-btn và .buy-btn */
+.buy-btn:hover {
+	background-color: #FF4500;
+	transform: scale(1.05);
+}
 
-	/* Xóa float cho phần tử .box-content */
-	.clearfix::after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-	.search {
-		margin-left: 2%;
-		margin-top: 0.2%;
-	}
-	.searchcar{
-		display: flex;
-		margin-left: 3%;
-	}
+.add-btn:hover {
+	background-color: #00FF7F;
+	transform: scale(1.05);
+}
+
+/* Xóa float cho phần tử .box-content */
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.search {
+	border-radius: 10px;
+	margin-left: 2%;
+	margin-top: 1.2%;
+	display: flex;
+}
+
+.search input {
+	padding: 10px;
+	border-radius: 15px;
+}
+
+.searchcar {
+	display: flex;
+	margin-left: 3%;
+}
+
+.btn-search {
+	cursor: pointer;
+}
+
+.btn-search:hover {
+	transform: scale(1.05);
+}
+
+ul.menu {
+	list-style-type: none;
+	margin-top: 20px;
+	overflow: hidden;
+	background-color: #000;
+	display: flex;
+	justify-content: center;
+}
+
+ul.menu li {
+	float: left;
+	width: 150px;
+}
+
+ul.menu li a {
+	display: block;
+	color: #fff;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+}
+
+ul.menu li a:hover {
+	background-color: #fff;
+	color: #000;
+}
+
+.searchcar ul.menu2 {
+	list-style-type: none;
+	margin-top: 20px;
+	margin-left: 60px;
+	overflow: hidden;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.searchcar ul.menu2 li {
+	float: left;
+	width: 250px;
+	border-right: 1px solid #000;
+}
+
+.searchcar ul.menu2 li a {
+	display: block;
+	color: #000;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+}
+
+.searchcar ul.menu2 li a:hover {
+	background-color: #000;
+	color: #fff;
 }

@@ -4,7 +4,7 @@
 
 <nav class="navbar">
 	<div class="container">
-		<a class="brand" href="index.jsp">PiuOto</a>
+		<img class="logo" src="./product-images/logo.png">
 		<!-- <button class = "navbar-toggle" type ="button"></button>   -->
 		<div class="navbar-content">
 			<ul class="navbar-nav">

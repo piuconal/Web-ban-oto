@@ -22,21 +22,50 @@ if (cart_list != null) {
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>HOME</title>
+<title>Home-PiuOto</title>
 <link rel="stylesheet" href="./css/index.css">
-
+<link rel="icon" href="./product-images/icontab.png">
 </head>
 <body>
+	<style>
+body {
+	background: url("./product-images/hot.png");
+}
+</style>
 	<%@include file="includes/nav.jsp"%>
+	<!-- banner -->
+	<div class="banner">
+		<iframe
+			src="https://www.youtube.com/embed/p_is7qzLuFM?autoplay=1&mute=1"></iframe>
+	</div>
+	<!-- end banner -->
 	<div class="container">
-		<div class="card-header">All Products</div>
+		<ul class="menu">
+			<li><a href="#">Buggatii</a></li>
+			<li><a href="#">Lamborghini</a></li>
+			<li><a href="#">Ferrari</a></li>
+			<li><a href="#">Porsche</a></li>
+			<li><a href="#">Mercedes</a></li>
+			<li><a href="#">McLaren</a></li>
+			<li><a href="#">Bentley</a></li>
+			<li><a href="#">Rolls-Royce</a></li>
+			<li><a href="#">Aston Martin</a></li>
+			<li><a href="#">Audi</a></li>
+		</ul>
 
 		<div class="searchcar">
-			<h3>Search car</h3>
 			<form class="search" action="search" method="GET">
-				<input type="text" name="keyword"> <input type="submit"
-					value="Search">
+				<input class="tkxe" type="text" name="keyword"
+					placeholder="Search car....."> <input class="btn-search"
+					type="submit" value="Search">
 			</form>
+
+			<ul class="menu2">
+				<li><a href="#">Down 300,000 $</a></li>
+				<li><a href="#">500,000 -> 1,000,000 $</a></li>
+				<li><a href="#">1,000,000 -> 3,000,000 $</a></li>
+				<li><a href="#">Up 3,000,000 $</a></li>
+			</ul>
 		</div>
 
 		<div class="row">
@@ -49,16 +78,19 @@ if (cart_list != null) {
 					<img class="card-img-top" src="./product-images/<%=p.getImage()%>">
 					<div class="card-body">
 						<h5 class="card-title"><%=p.getName()%></h5>
-						<h6 class="price"><%=p.getPrice()%></h6>
+						<h6 class="price"><%=p.getPrice()%>
+							$
+						</h6>
 						<h6 class="category">
 							Category:
 							<%=p.getCategory()%></h6>
 						<div class="card-btn">
-							<a href="add-to-cart?id=<%=p.getId()%>" class="add-btn">Add to cart</a> 
-							<a href="order-now?quantity=1&id=<%=p.getId()%>" class="buy-btn">Buy Now</a>
+							<a href="add-to-cart?id=<%=p.getId()%>" class="add-btn">Add
+								to cart</a> <a href="order-now?quantity=1&id=<%=p.getId()%>"
+								class="buy-btn">Buy Now</a>
 						</div>
 					</div>
-				</div>	
+				</div>
 			</div>
 			<%
 			}

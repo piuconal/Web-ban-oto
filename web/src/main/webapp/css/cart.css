@@ -10,8 +10,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 90%;
-	padding-top: 2%;
+	width: 80%;
+	padding-top: 4%;
 	margin: auto;
 }
 
@@ -20,6 +20,7 @@
 	font-weight: 700;
 	display: inline-block;
 	margin-right: 10px;
+	color: white;
 }
 
 .btn-check-out {
@@ -91,8 +92,17 @@
 	text-align: center;
 }
 
-button {
+.btn-danger {
 	background-color: red;
+	color: #fff;
+	padding: 5px 10px;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.btn-sm {
+	background-color: green;
 	color: #fff;
 	padding: 5px 10px;
 	border: none;
@@ -101,4 +111,8 @@ button {
 
 button:hover {
 	transform: scale(1.05);
+}
+
+tr {
+	background: linear-gradient(to bottom, #dd9ef0 0%, #9ee1f0 100%);
 }

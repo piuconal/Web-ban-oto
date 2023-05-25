@@ -1,50 +1,59 @@
 @charset "UTF-8";
 
 * {
-	padding: 0;
-	margin: 0;
+	margin: 0px;
+	padding: 0px;
 	box-sizing: border-box;
 }
 
-.container {
-	align-items: center;
-	margin-top: 2%;
+body {
+	width: 100%;
+	margin: 0px auto;
 }
-
-.brand {
-	font-weight: bold;
-	font-size: 24px;
-	margin-right: 20px;
-	text-decoration: none;
-	color: black;
-	float: left;
-	margin-left: 3%;
-}
-
+/* menu */
 .navbar-content {
 	display: flex;
-	margin-left: 40%;
+	background: #090705;
+	height: 120px;
+	position: sticky;
+	box-shadow: -10px 0 10px rgb(0, 255, 213);
 }
 
-.navbar-nav {
+.navbar-content:hover {
+	transform: scale(1.0);
+	box-shadow: -10px 0 10px rgba(0, 255, 0, 1);
+	/* background: linear-gradient(to bottom, #dd9ef0 0%, #9ee1f0 100%); */
+}
+
+.navbar-content .navbar-nav {
+	margin-left: 20px;
 	display: flex;
-	list-style-type: none;
+	width: 60%;
+	text-align: center;
+	margin-left: 100px;
 }
 
-.nav-item {
-	margin: 0 10px;
+.navbar-content .navbar-nav li {
+	list-style: none;
+	padding-top: 50px;
+	width: 250px;
 }
 
-.nav-item a {
+.navbar-content img {
+	margin-left: 5%;
+	width: 8%;
+	border-radius: 50%;
+}
+
+.navbar-content ul li a {
 	text-decoration: none;
-	color: #000;
-	font-weight: bold;
-	font-size: 25px;
-	transition: color 0.3s ease;
-	margin-left: 2%;
-	/* Thêm hiệu ứng chuyển đổi màu khi hover */
+	display: block;
+	color: rgb(238, 234, 234);
+	font-size: 20px;
 }
 
-.nav-item a:hover {
-	color: #f00; /* Màu sắc khi hover */
+.navbar-content ul li:hover {
+	background: #1b9b9b;
 }
+
+/* endmenu */

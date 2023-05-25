@@ -6,6 +6,11 @@
 	box-sizing: border-box;
 }
 
+.container {
+	align-items: center;
+	margin-top: 2%;
+}
+
 .row {
 	width: 100%;
 	height: auto;
@@ -13,6 +18,18 @@
 	flex-wrap: wrap;
 }
 
+/* banner */
+.banner {
+	text-align: center;
+}
+
+.banner iframe {
+	margin-top: 4px;
+	width: 99.5%;
+	height: 600px;
+	background: #090705;
+}
+/* end banner */
 /* Kiểu cho phần tử .box-content */
 .box-content {
 	width: 25%;

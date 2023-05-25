@@ -33,8 +33,13 @@ body {
 }
 </style>
 	<%@include file="includes/nav.jsp"%>
+	<!-- banner -->
+	<div class="banner">
+		<iframe
+			src="https://www.youtube.com/embed/p_is7qzLuFM?autoplay=1&mute=1"></iframe>
+	</div>
+	<!-- end banner -->
 	<div class="container">
-
 		<ul class="menu">
 			<li><a href="#">Buggatii</a></li>
 			<li><a href="#">Lamborghini</a></li>

@@ -1,4 +1,4 @@
-<%@page import="web.dao.ProductDao"%>
+<%@page import="web.dao.ProductDao" %>
 <%@page import="web.connection.DbCon"%>
 <%@page import="web.model.*"%>
 <%@page import="java.util.*"%>

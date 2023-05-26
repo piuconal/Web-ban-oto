@@ -1,4 +1,4 @@
-<%@page import="web.dao.ProductDao" %>
+<%@page import="web.dao.ProductDao"%>
 <%@page import="web.connection.DbCon"%>
 <%@page import="web.model.*"%>
 <%@page import="java.util.*"%>
@@ -54,7 +54,7 @@ body {
 		</ul>
 
 		<div class="searchcar">
-			<form class="search" action="search" method="GET">
+			<form class="search" action="search.jsp" method="GET">
 				<input class="tkxe" type="text" name="keyword"
 					placeholder="Search car....."> <input class="btn-search"
 					type="submit" value="Search">
@@ -70,8 +70,13 @@ body {
 
 		<div class="row">
 			<%
+			String searchKeyword = request.getParameter("keyword");
 			if (!products.isEmpty()) {
 				for (Product p : products) {
+					if (searchKeyword != null && !searchKeyword.isEmpty()
+					&& !p.getName().toLowerCase().contains(searchKeyword.toLowerCase())) {
+				continue; // Skip this product if it doesn't match the search keyword
+					}
 			%>
 			<div class="box-content">
 				<div class="card">

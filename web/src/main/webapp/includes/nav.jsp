@@ -8,10 +8,10 @@
 		<ul class="navbar-nav">
 			<li class="nav-item"><a href="index.jsp">HOME</a></li>
 			<li class="nav-item"><a href="cart.jsp">CART</a></li>
+			<li class="nav-item"><a href="order.jsp">ORDER</a></li>
 			<%
 			if (auth != null) {
 			%>
-			<li class="nav-item"><a href="order.jsp">ORDER</a></li>
 			<li class="nav-item"><a href="log-out">LOGOUT</a></li>
 			<%
 			} else {

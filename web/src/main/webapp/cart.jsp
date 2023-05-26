@@ -29,6 +29,7 @@ if (cart_list != null) {
 <meta charset="ISO-8859-1">
 <title>Cart</title>
 <link rel="stylesheet" href="./css/cart.css">
+<link rel="icon" href="./product-images/icontab.png">
 </head>
 <body>
 	<style>

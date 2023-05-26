@@ -21,7 +21,7 @@ if (cart_list != null) {
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Search Results</title>
+<title>Search</title>
 <link rel="stylesheet" href="./css/index.css">
 <link rel="icon" href="./product-images/icontab.png">
 </head>
@@ -34,16 +34,16 @@ body {
 	<%@include file="includes/nav.jsp"%>
 	<div class="container">
 		<ul class="menu">
-			<li><a href="#">Buggatii</a></li>
-			<li><a href="#">Lamborghini</a></li>
-			<li><a href="#">Ferrari</a></li>
-			<li><a href="#">Porsche</a></li>
-			<li><a href="#">Mercedes</a></li>
-			<li><a href="#">McLaren</a></li>
-			<li><a href="#">Bentley</a></li>
-			<li><a href="#">Rolls-Royce</a></li>
-			<li><a href="#">Aston Martin</a></li>
-			<li><a href="#">Audi</a></li>
+			<li><a href="search.jsp?category=Bugatti">Bugatti</a></li>
+			<li><a href="search.jsp?category=Lamborghini">Lamborghini</a></li>
+			<li><a href="search.jsp?category=Ferrari">Ferrari</a></li>
+			<li><a href="search.jsp?category=Porsche">Porsche</a></li>
+			<li><a href="search.jsp?category=Mercedes">Mercedes</a></li>
+			<li><a href="search.jsp?category=McLaren">McLaren</a></li>
+			<li><a href="search.jsp?category=Bentley">Bentley</a></li>
+			<li><a href="search.jsp?category=Rolls-Royce">Rolls-Royce</a></li>
+			<li><a href="search.jsp?category=Aston Martin">Aston Martin</a></li>
+			<li><a href="search.jsp?category=Audi">Audi</a></li>
 		</ul>
 
 		<div class="searchcar">
@@ -54,24 +54,40 @@ body {
 			</form>
 
 			<ul class="menu2">
-				<li><a href="#">Down 300,000 $</a></li>
-				<li><a href="#">500,000 -> 1,000,000 $</a></li>
-				<li><a href="#">1,000,000 -> 3,000,000 $</a></li>
-				<li><a href="#">Up 3,000,000 $</a></li>
+				<li><a href="search.jsp?maxPrice=300000">Down 300,000 $</a></li>
+				<li><a href="search.jsp?minPrice=500000&maxPrice=1000000">500,000
+						- 1,000,000 $</a></li>
+				<li><a href="search.jsp?minPrice=1000000&maxPrice=3000000">1,000,000
+						- 3,000,000 $</a></li>
+				<li><a href="search.jsp?minPrice=3000000">Up 3,000,000 $</a></li>
 			</ul>
 		</div>
 		<%
 		String searchKeyword = request.getParameter("keyword");
+		String minPriceStr = request.getParameter("minPrice");
+		String maxPriceStr = request.getParameter("maxPrice");
+		String category = request.getParameter("category");
+		double minPrice = 0; // Default minimum price
+		double maxPrice = Double.MAX_VALUE; // Default maximum price
+
+		if (minPriceStr != null && !minPriceStr.isEmpty()) {
+			minPrice = Double.parseDouble(minPriceStr);
+		}
+
+		if (maxPriceStr != null && !maxPriceStr.isEmpty()) {
+			maxPrice = Double.parseDouble(maxPriceStr);
+		}
 		%>
 
 		<div class="row">
 			<%
 			if (!products.isEmpty()) {
 				for (Product p : products) {
-					if (searchKeyword != null && !searchKeyword.isEmpty()
-					&& !p.getName().toLowerCase().contains(searchKeyword.toLowerCase())) {
-				continue; // Skip this product if it doesn't match the search keyword
-					}
+					if ((searchKeyword != null && !searchKeyword.isEmpty()
+					&& !p.getName().toLowerCase().contains(searchKeyword.toLowerCase()))
+					|| (category != null && !category.isEmpty() && !p.getCategory().equalsIgnoreCase(category))
+					|| p.getPrice() < minPrice || p.getPrice() > maxPrice)
+				continue;
 			%>
 			<div class="box-content">
 				<div class="card">

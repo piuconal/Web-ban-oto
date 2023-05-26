@@ -1,4 +1,5 @@
-	<%@ page import="web.model.*"%>
+
+<%@ page import="web.model.*"%>
 <%@page import="web.dao.ProductDao"%>
 <%@page import="web.connection.DbCon"%>
 <%@page import="java.util.*"%>
@@ -76,9 +77,7 @@ body {
 						</form>
 					</td>
 					<td><a href="remove-from-cart?id=<%=c.getId()%>"
-						class="btn-danger">
-							Remove
-					</a></td>
+						class="btn-danger"> Remove </a></td>
 				</tr>
 
 				<%

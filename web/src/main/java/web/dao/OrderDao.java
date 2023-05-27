@@ -30,7 +30,7 @@ public class OrderDao {
             pst = this.con.prepareStatement(query);
             pst.setInt(1, model.getId());
             pst.setInt(2, model.getUid());
-            pst.setInt(3, model.getQunatity());
+            pst.setInt(3, model.getQuantity());
             pst.setString(4, model.getDate());
             pst.executeUpdate();
             result = true;
@@ -58,7 +58,7 @@ public class OrderDao {
                 order.setName(product.getName());
                 order.setCategory(product.getCategory());
                 order.setPrice(product.getPrice()*rs.getInt("o_quantity"));
-                order.setQunatity(rs.getInt("o_quantity"));
+                order.setQuantity(rs.getInt("o_quantity"));
                 order.setDate(rs.getString("o_date"));
                 list.add(order);
             }

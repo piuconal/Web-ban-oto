@@ -1,4 +1,4 @@
-<%-- <head>
+<head>
 <link rel="stylesheet" type="text/css" href="./css/nav.css">
 </head>
 
@@ -24,4 +24,3 @@
 	</div>
 </body>
 
- --%>

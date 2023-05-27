@@ -5,10 +5,10 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
-/* User auth = (User) request.getSession().getAttribute("auth");
+User auth = (User) request.getSession().getAttribute("auth");
 if (auth != null) {
 	request.setAttribute("auth", auth);
-} */
+} 
 
 ProductDao pd = new ProductDao(DbCon.getConnection());
 List<Product> products = pd.getAllProducts();
@@ -32,7 +32,7 @@ body {
 	background: url("./product-images/hot.png");
 }
 </style>
-	<%-- <%@include file="includes/nav.jsp"%> --%>
+	<%@include file="includes/nav.jsp"%>
 	<!-- banner -->
 	<div class="banner">
 		<iframe

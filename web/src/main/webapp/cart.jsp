@@ -1,10 +1,9 @@
-
 <%@ page import="web.model.*"%>
 <%@page import="web.dao.ProductDao"%>
 <%@page import="web.connection.DbCon"%>
 <%@page import="java.util.*"%>
 <%@page import="java.text.DecimalFormat"%>
-
+<%@ page import="java.text.DecimalFormatSymbols"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
@@ -56,11 +55,21 @@ body {
 				<%
 				if (cart_list != null) {
 					for (Cart c : cartProduct) {
+						// Lấy giá trị số từ đối tượng p
+						double price = c.getPrice();
+
+						// Tạo đối tượng DecimalFormatSymbols với mã hóa ISO-8859-1
+						DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+						symbols.setGroupingSeparator(',');
+
+						// Tạo đối tượng DecimalFormat với định dạng số và DecimalFormatSymbols
+						DecimalFormat formatter = new DecimalFormat("#,###", symbols);
+						String formattedPrice = formatter.format(price);
 				%>
 				<tr>
 					<td><%=c.getName()%></td>
 					<td><%=c.getCategory()%></td>
-					<td><%=dcf.format(c.getPrice())%></td>
+					<td>$ <%=formattedPrice%></td>
 					<td>
 						<form action="order-now" method="post" class="form-inline">
 							<input type="hidden" name="id" value="<%=c.getId()%>"

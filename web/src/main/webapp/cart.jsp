@@ -21,6 +21,11 @@ if (cart_list != null) {
 	int total = pDao.getTotalCartPrice(cart_list);
 	request.setAttribute("total", total);
 	request.setAttribute("cart_list", cart_list);
+
+	// Định dạng số và tạo dấu phẩy ngăn cách hàng nghìn cho total
+	DecimalFormat decimalFormat = new DecimalFormat("#,###");
+	String formattedTotal = decimalFormat.format(total);
+	request.setAttribute("formattedTotal", formattedTotal);
 }
 %>
 <!DOCTYPE html>
@@ -39,7 +44,8 @@ body {
 </style>
 	<%@include file="includes/nav.jsp"%>
 	<div class="container1">
-		<div class="price">$ ${(total>0)?dcf.format(total):0}</div>
+
+		<div class="price">$ ${(total>0)?formattedTotal:0}</div>
 		<a class="btn-check-out" href="cart-check-out">Check out</a>
 		<table class="table">
 			<thead>
@@ -55,14 +61,11 @@ body {
 				<%
 				if (cart_list != null) {
 					for (Cart c : cartProduct) {
-						// Lấy giá trị số từ đối tượng p
 						double price = c.getPrice();
 
-						// Tạo đối tượng DecimalFormatSymbols với mã hóa ISO-8859-1
 						DecimalFormatSymbols symbols = new DecimalFormatSymbols();
 						symbols.setGroupingSeparator(',');
 
-						// Tạo đối tượng DecimalFormat với định dạng số và DecimalFormatSymbols
 						DecimalFormat formatter = new DecimalFormat("#,###", symbols);
 						String formattedPrice = formatter.format(price);
 				%>

@@ -85,8 +85,8 @@
 .add-btn {
 	display: inline-block;
 	padding: 5px 10px;
-	background-color: green;
-	color: #fff;
+	background-color: #dfdf00;
+	color: black;
 	text-decoration: none;
 	border-radius: 3px;
 	margin-right: 5px;
@@ -95,7 +95,7 @@
 .buy-btn {
 	display: inline-block;
 	padding: 5px 10px;
-	background-color: red;
+	background-color: black;
 	color: #fff;
 	text-decoration: none;
 	border-radius: 3px;
@@ -104,12 +104,12 @@
 
 /* Kiểu khi rê chuột qua .add-btn và .buy-btn */
 .buy-btn:hover {
-	background-color: #FF4500;
+	background-color: #312028;
 	transform: scale(1.05);
 }
 
 .add-btn:hover {
-	background-color: #00FF7F;
+	background-color: #f7f700;
 	transform: scale(1.05);
 }
 

@@ -1,4 +1,5 @@
-	<%@ page import="web.model.*"%>
+
+<%@ page import="web.model.*"%>
 <%@page import="web.dao.ProductDao"%>
 <%@page import="web.connection.DbCon"%>
 <%@page import="java.util.*"%>
@@ -29,6 +30,7 @@ if (cart_list != null) {
 <meta charset="ISO-8859-1">
 <title>Cart</title>
 <link rel="stylesheet" href="./css/cart.css">
+<link rel="icon" href="./product-images/icontab.png">
 </head>
 <body>
 	<style>
@@ -75,9 +77,7 @@ body {
 						</form>
 					</td>
 					<td><a href="remove-from-cart?id=<%=c.getId()%>"
-						class="btn-danger">
-							Remove
-					</a></td>
+						class="btn-danger"> Remove </a></td>
 				</tr>
 
 				<%

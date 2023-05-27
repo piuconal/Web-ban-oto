@@ -1,14 +1,14 @@
-<%@page import="web.dao.ProductDao" %>
+<%@page import="web.dao.ProductDao"%>
 <%@page import="web.connection.DbCon"%>
 <%@page import="web.model.*"%>
 <%@page import="java.util.*"%>
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
-User auth = (User) request.getSession().getAttribute("auth");
+/* User auth = (User) request.getSession().getAttribute("auth");
 if (auth != null) {
 	request.setAttribute("auth", auth);
-}
+} */
 
 ProductDao pd = new ProductDao(DbCon.getConnection());
 List<Product> products = pd.getAllProducts();
@@ -32,7 +32,7 @@ body {
 	background: url("./product-images/hot.png");
 }
 </style>
-	<%@include file="includes/nav.jsp"%>
+	<%-- <%@include file="includes/nav.jsp"%> --%>
 	<!-- banner -->
 	<div class="banner">
 		<iframe
@@ -41,37 +41,44 @@ body {
 	<!-- end banner -->
 	<div class="container">
 		<ul class="menu">
-			<li><a href="#">Buggatii</a></li>
-			<li><a href="#">Lamborghini</a></li>
-			<li><a href="#">Ferrari</a></li>
-			<li><a href="#">Porsche</a></li>
-			<li><a href="#">Mercedes</a></li>
-			<li><a href="#">McLaren</a></li>
-			<li><a href="#">Bentley</a></li>
-			<li><a href="#">Rolls-Royce</a></li>
-			<li><a href="#">Aston Martin</a></li>
-			<li><a href="#">Audi</a></li>
+			<li><a href="search.jsp?category=Bugatti">Bugatti</a></li>
+			<li><a href="search.jsp?category=Lamborghini">Lamborghini</a></li>
+			<li><a href="search.jsp?category=Ferrari">Ferrari</a></li>
+			<li><a href="search.jsp?category=Porsche">Porsche</a></li>
+			<li><a href="search.jsp?category=Mercedes">Mercedes</a></li>
+			<li><a href="search.jsp?category=McLaren">McLaren</a></li>
+			<li><a href="search.jsp?category=Bentley">Bentley</a></li>
+			<li><a href="search.jsp?category=Rolls-Royce">Rolls-Royce</a></li>
+			<li><a href="search.jsp?category=Aston Martin">Aston Martin</a></li>
+			<li><a href="search.jsp?category=Audi">Audi</a></li>
 		</ul>
 
 		<div class="searchcar">
-			<form class="search" action="search" method="GET">
+			<form class="search" action="search.jsp" method="GET">
 				<input class="tkxe" type="text" name="keyword"
 					placeholder="Search car....."> <input class="btn-search"
 					type="submit" value="Search">
 			</form>
 
 			<ul class="menu2">
-				<li><a href="#">Down 300,000 $</a></li>
-				<li><a href="#">500,000 -> 1,000,000 $</a></li>
-				<li><a href="#">1,000,000 -> 3,000,000 $</a></li>
-				<li><a href="#">Up 3,000,000 $</a></li>
+				<li><a href="search.jsp?maxPrice=300000">Down 300,000 $</a></li>
+				<li><a href="search.jsp?minPrice=500000&maxPrice=1000000">500,000
+						- 1,000,000 $</a></li>
+				<li><a href="search.jsp?minPrice=1000000&maxPrice=3000000">1,000,000
+						- 3,000,000 $</a></li>
+				<li><a href="search.jsp?minPrice=3000000">Up 3,000,000 $</a></li>
 			</ul>
 		</div>
 
 		<div class="row">
 			<%
+			String searchKeyword = request.getParameter("keyword");
 			if (!products.isEmpty()) {
 				for (Product p : products) {
+					if (searchKeyword != null && !searchKeyword.isEmpty()
+					&& !p.getName().toLowerCase().contains(searchKeyword.toLowerCase())) {
+				continue; // Skip this product if it doesn't match the search keyword
+					}
 			%>
 			<div class="box-content">
 				<div class="card">

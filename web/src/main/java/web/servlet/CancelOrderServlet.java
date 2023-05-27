@@ -25,7 +25,7 @@ public class CancelOrderServlet extends HttpServlet {
 				OrderDao orderDao = new OrderDao(DbCon.getConnection());
 				orderDao.cancelOrder(Integer.parseInt(id));
 			}
-			response.sendRedirect("orders.jsp");
+			response.sendRedirect("order.jsp");
 		} catch (ClassNotFoundException|SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

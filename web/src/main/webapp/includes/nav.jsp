@@ -8,7 +8,7 @@
 		<div class="navbar-nav">
 			<a href="index.jsp">HOME</a> 
 			<a href="cart.jsp">CART</a> 
-			<a href="cart.jsp">ORDER	</a>
+			<a href="order.jsp">ORDER	</a>
 			<%
 			if (auth != null) {
 			%>

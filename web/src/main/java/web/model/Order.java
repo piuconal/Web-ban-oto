@@ -1,14 +1,14 @@
 package web.model;
 
-public class Order extends Product{
+public class Order extends Product {
 	private int orderId;
 	private int uid;
 	private int quantity;
 	private String date;
-	
+
 	public Order() {
 	}
-	
+
 	public Order(int orderId, int uid, int quantity, String date) {
 		super();
 		this.orderId = orderId;
@@ -27,10 +27,11 @@ public class Order extends Product{
 	public int getOrderId() {
 		return orderId;
 	}
+
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
-	
+
 	public int getUid() {
 		return uid;
 	}
@@ -42,12 +43,15 @@ public class Order extends Product{
 	public int getQuantity() {
 		return quantity;
 	}
+
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+
 	public String getDate() {
 		return date;
 	}
+
 	public void setDate(String date) {
 		this.date = date;
 	}

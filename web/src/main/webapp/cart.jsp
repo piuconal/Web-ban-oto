@@ -7,8 +7,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
-DecimalFormat dcf = new DecimalFormat("#.##");
-request.setAttribute("dcf", dcf);
 User auth = (User) request.getSession().getAttribute("auth");
 if (auth != null) {
 	request.setAttribute("auth", auth);
@@ -21,8 +19,6 @@ if (cart_list != null) {
 	int total = pDao.getTotalCartPrice(cart_list);
 	request.setAttribute("total", total);
 	request.setAttribute("cart_list", cart_list);
-
-	// Định dạng số và tạo dấu phẩy ngăn cách hàng nghìn cho total
 	DecimalFormat decimalFormat = new DecimalFormat("#,###");
 	String formattedTotal = decimalFormat.format(total);
 	request.setAttribute("formattedTotal", formattedTotal);
@@ -70,7 +66,9 @@ body {
 						String formattedPrice = formatter.format(price);
 				%>
 				<tr>
-					<td><%=c.getName()%></td>
+					<td><%=c.getName()%> </br> <img class="card-img-top"
+						src="./product-images/<%=c.getImage()%>"
+						style="width: 200px; height: 100px;"></td>
 					<td><%=c.getCategory()%></td>
 					<td>$ <%=formattedPrice%></td>
 					<td>

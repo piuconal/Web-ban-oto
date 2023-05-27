@@ -31,7 +31,7 @@ public class ProductDao {
 				row.setId(rs.getInt("id"));
 				row.setName(rs.getString("name"));
 				row.setCategory(rs.getString("category"));
-				row.setPrice(rs.getDouble("price"));
+				row.setPrice(rs.getInt("price"));
 				row.setImage(rs.getString("image"));
 
 				book.add(row);
@@ -58,7 +58,7 @@ public class ProductDao {
 				row.setId(rs.getInt("id"));
 				row.setName(rs.getString("name"));
 				row.setCategory(rs.getString("category"));
-				row.setPrice(rs.getDouble("price"));
+				row.setPrice(rs.getInt("price"));
 				row.setImage(rs.getString("image"));
 			}
 		} catch (Exception e) {
@@ -69,8 +69,8 @@ public class ProductDao {
 		return row;
 	}
 
-	public double getTotalCartPrice(ArrayList<Cart> cartList) {
-		double sum = 0;
+	public int getTotalCartPrice(ArrayList<Cart> cartList) {
+		int sum = 0;
 		try {
 			if (cartList.size() > 0) {
 				for (Cart item : cartList) {
@@ -79,7 +79,7 @@ public class ProductDao {
 					pst.setInt(1, item.getId());
 					rs = pst.executeQuery();
 					while (rs.next()) {
-						sum += rs.getDouble("price") * item.getQuantity();
+						sum += rs.getInt("price") * item.getQuantity();
 					}
 
 				}
@@ -106,7 +106,7 @@ public class ProductDao {
 						row.setId(rs.getInt("id"));
 						row.setName(rs.getString("name"));
 						row.setCategory(rs.getString("category"));
-						row.setPrice(rs.getDouble("price") * item.getQuantity());
+						row.setPrice(rs.getInt("price") * item.getQuantity());
 						row.setQuantity(item.getQuantity());
 						
 						book.add(row);

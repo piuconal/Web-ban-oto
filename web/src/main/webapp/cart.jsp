@@ -19,7 +19,7 @@ List<Cart> cartProduct = null;
 if (cart_list != null) {
 	ProductDao pDao = new ProductDao(DbCon.getConnection());
 	cartProduct = pDao.getCartProducts(cart_list);
-	double total = pDao.getTotalCartPrice(cart_list);
+	int total = pDao.getTotalCartPrice(cart_list);
 	request.setAttribute("total", total);
 	request.setAttribute("cart_list", cart_list);
 }
@@ -41,7 +41,7 @@ body {
 	<%@include file="includes/nav.jsp"%>
 	<div class="container1">
 		<div class="price">$ ${(total>0)?dcf.format(total):0}</div>
-		<a class="btn-check-out" href="#">Check out</a>
+		<a class="btn-check-out" href="cart-check-out">Check out</a>
 		<table class="table">
 			<thead>
 				<tr>

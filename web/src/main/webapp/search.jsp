@@ -2,6 +2,8 @@
 <%@page import="web.connection.DbCon"%>
 <%@page import="web.model.*"%>
 <%@page import="java.util.*"%>
+<%@ page import="java.text.DecimalFormat"%>
+<%@ page import="java.text.DecimalFormatSymbols"%>
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
@@ -54,12 +56,12 @@ body {
 			</form>
 
 			<ul class="menu2">
-				<li><a href="search.jsp?maxPrice=300000">Down 300,000 $</a></li>
-				<li><a href="search.jsp?minPrice=500000&maxPrice=1000000">500,000
-						- 1,000,000 $</a></li>
-				<li><a href="search.jsp?minPrice=1000000&maxPrice=3000000">1,000,000
-						- 3,000,000 $</a></li>
-				<li><a href="search.jsp?minPrice=3000000">Up 3,000,000 $</a></li>
+				<li><a href="search.jsp?maxPrice=300000">Down $300,000</a></li>
+				<li><a href="search.jsp?minPrice=500000&maxPrice=1000000">$500,000
+						- 1,000,000 </a></li>
+				<li><a href="search.jsp?minPrice=1000000&maxPrice=3000000">$1,000,000
+						- 3,000,000 </a></li>
+				<li><a href="search.jsp?minPrice=3000000">Up $3,000,000</a></li>
 			</ul>
 		</div>
 		<%
@@ -67,15 +69,15 @@ body {
 		String minPriceStr = request.getParameter("minPrice");
 		String maxPriceStr = request.getParameter("maxPrice");
 		String category = request.getParameter("category");
-		double minPrice = 0; // Default minimum price
-		double maxPrice = Double.MAX_VALUE; // Default maximum price
+		int minPrice = 0; // Default minimum price
+		int maxPrice = Integer.MAX_VALUE; // Default maximum price
 
 		if (minPriceStr != null && !minPriceStr.isEmpty()) {
-			minPrice = Double.parseDouble(minPriceStr);
+			minPrice = Integer.parseInt(minPriceStr);
 		}
 
 		if (maxPriceStr != null && !maxPriceStr.isEmpty()) {
-			maxPrice = Double.parseDouble(maxPriceStr);
+			maxPrice = Integer.parseInt(maxPriceStr);
 		}
 		%>
 
@@ -88,14 +90,25 @@ body {
 					|| (category != null && !category.isEmpty() && !p.getCategory().equalsIgnoreCase(category))
 					|| p.getPrice() < minPrice || p.getPrice() > maxPrice)
 				continue;
+					// Lấy giá trị số từ đối tượng p
+					double price = p.getPrice();
+
+					// Tạo đối tượng DecimalFormatSymbols với mã hóa ISO-8859-1
+					DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+					symbols.setGroupingSeparator(',');
+
+					// Tạo đối tượng DecimalFormat với định dạng số và DecimalFormatSymbols
+					DecimalFormat formatter = new DecimalFormat("#,###", symbols);
+					String formattedPrice = formatter.format(price);
 			%>
 			<div class="box-content">
 				<div class="card">
 					<img class="card-img-top" src="./product-images/<%=p.getImage()%>">
 					<div class="card-body">
 						<h5 class="card-title"><%=p.getName()%></h5>
-						<h6 class="price"><%=p.getPrice()%>
+						<h6 class="price">
 							$
+							<%=formattedPrice%>
 						</h6>
 						<h6 class="category">
 							Category:

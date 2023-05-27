@@ -41,7 +41,7 @@ body {
 	<%@include file="includes/nav.jsp"%>
 	<div class="container1">
 		<div class="price">$ ${(total>0)?dcf.format(total):0}</div>
-		<a class="btn-check-out" href="cart-check-out">Check out</a>
+		<a class="btn-check-out" href="#">Check out</a>
 		<table class="table">
 			<thead>
 				<tr>

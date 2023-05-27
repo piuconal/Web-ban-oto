@@ -18,22 +18,11 @@ body {
 	position: sticky;
 }
 
-.navbar-content:hover {
-	transform: scale(1.0);
-}
-
 .navbar-content .navbar-nav {
-	margin-left: 20px;
 	display: flex;
 	width: 60%;
 	text-align: center;
-	margin-left: 100px;
-}
-
-.navbar-content .navbar-nav li {
-	list-style: none;
-	padding-top: 50px;
-	width: 250px;
+	margin-left: 10%;
 }
 
 .navbar-content img {
@@ -42,15 +31,19 @@ body {
 	border-radius: 50%;
 }
 
-.navbar-content ul li a {
-	text-decoration: none;
+.navbar-nav a {	
+	padding-top: 5%;
+	padding-left: 10%;
+	padding-right: 10%;
 	display: block;
 	color: rgb(238, 234, 234);
 	font-size: 20px;
+	text-decoration: none;
+	border: 1px solid black;
 }
-
-.navbar-content ul li:hover {
-	background: #1b9b9b;
+.navbar-nav a:hover{	
+	background-color: #004080;
+	color: black;
 }
 
 /* endmenu */

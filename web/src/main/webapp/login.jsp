@@ -13,7 +13,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
-<%@include file="includes/head.jsp"%>
 </head>
 <body>
 <%@include file = "includes/nav.jsp" %>

@@ -92,9 +92,8 @@ body {
 							Category:
 							<%=p.getCategory()%></h6>
 						<div class="card-btn">
-							<a href="add-to-cart?id=<%=p.getId()%>" class="add-btn">Add
-								to cart</a> <a href="order-now?quantity=1&id=<%=p.getId()%>"
-								class="buy-btn">Buy Now</a>
+							<a href="add-to-cart?id=<%=p.getId()%>" class="add-btn" >Add to cart</a> 
+							<a href="order-now?quantity=1&id=<%=p.getId()%>" class="buy-btn">Buy Now</a>
 						</div>
 					</div>
 				</div>

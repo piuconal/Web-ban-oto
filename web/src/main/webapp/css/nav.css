@@ -16,13 +16,10 @@ body {
 	background: #090705;
 	height: 120px;
 	position: sticky;
-	box-shadow: -10px 0 10px rgb(0, 255, 213);
 }
 
 .navbar-content:hover {
 	transform: scale(1.0);
-	box-shadow: -10px 0 10px rgba(0, 255, 0, 1);
-	/* background: linear-gradient(to bottom, #dd9ef0 0%, #9ee1f0 100%); */
 }
 
 .navbar-content .navbar-nav {

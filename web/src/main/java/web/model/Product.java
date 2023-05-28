@@ -6,12 +6,10 @@ public class Product {
 	private String category;
 	private int price;
 	private String image;
-	
-	
+
 	public Product() {
 	}
 
-	
 	public Product(int id, String name, String category, int price, String image) {
 		super();
 		this.id = id;
@@ -20,7 +18,6 @@ public class Product {
 		this.price = price;
 		this.image = image;
 	}
-
 
 	public int getId() {
 		return id;
@@ -67,6 +64,5 @@ public class Product {
 		return "Product [id=" + id + ", name=" + name + ", category=" + category + ", price=" + price + ", image="
 				+ image + "]";
 	}
-	
-	
+
 }

@@ -114,9 +114,8 @@ body {
 							Category:
 							<%=p.getCategory()%></h6>
 						<div class="card-btn">
-							<a href="add-to-cart?id=<%=p.getId()%>" class="add-btn">Add
-								to cart</a> <a href="order-now?quantity=1&id=<%=p.getId()%>"
-								class="buy-btn">Buy Now</a>
+							<button class="add-btn" onclick="addToCart(<%=p.getId()%>)">Add
+								to cart</button>
 						</div>
 					</div>
 				</div>
@@ -130,5 +129,16 @@ body {
 		</div>
 
 		<%@include file="includes/footer.jsp"%>
+		<script>
+    function addToCart(productId) {
+    	var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'add-to-cart?id=' + productId, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+            }
+        };
+        xhr.send();
+    }
+</script>
 </body>
 </html>

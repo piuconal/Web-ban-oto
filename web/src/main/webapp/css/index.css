@@ -92,22 +92,6 @@
 	margin-right: 5px;
 }
 
-.buy-btn {
-	display: inline-block;
-	padding: 5px 10px;
-	background-color: black;
-	color: #fff;
-	text-decoration: none;
-	border-radius: 3px;
-	margin-right: 5px;
-}
-
-/* Kiểu khi rê chuột qua .add-btn và .buy-btn */
-.buy-btn:hover {
-	background-color: #312028;
-	transform: scale(1.05);
-}
-
 .add-btn:hover {
 	background-color: #f7f700;
 	transform: scale(1.05);
@@ -202,4 +186,8 @@ ul.menu li a:hover {
 .searchcar ul.menu2 li a:hover {
 	background-color: #000;
 	color: #fff;
+}
+
+button {
+	cursor: pointer;
 }

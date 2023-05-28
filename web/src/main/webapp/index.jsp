@@ -81,14 +81,10 @@ body {
 					&& !p.getName().toLowerCase().contains(searchKeyword.toLowerCase())) {
 				continue; // Skip this product if it doesn't match the search keyword
 					}
-					// Lấy giá trị số từ đối tượng p
 					double price = p.getPrice();
 
-					// Tạo đối tượng DecimalFormatSymbols với mã hóa ISO-8859-1
 					DecimalFormatSymbols symbols = new DecimalFormatSymbols();
 					symbols.setGroupingSeparator(',');
-
-					// Tạo đối tượng DecimalFormat với định dạng số và DecimalFormatSymbols
 					DecimalFormat formatter = new DecimalFormat("#,###", symbols);
 					String formattedPrice = formatter.format(price);
 			%>
@@ -106,9 +102,8 @@ body {
 							Category:
 							<%=p.getCategory()%></h6>
 						<div class="card-btn">
-							<a href="add-to-cart?id=<%=p.getId()%>" class="add-btn">Add
-								to cart</a> <a href="order-now?quantity=1&id=<%=p.getId()%>"
-								class="buy-btn">Buy Now</a>
+							<button class="add-btn" onclick="addToCart(<%=p.getId()%>)">Add
+								to cart</button>
 						</div>
 					</div>
 				</div>
@@ -122,5 +117,17 @@ body {
 		</div>
 	</div>
 	<%@include file="includes/footer.jsp"%>
+
+	<script>
+    function addToCart(productId) {
+    	var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'add-to-cart?id=' + productId, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+            }
+        };
+        xhr.send();
+    }
+</script>
 </body>
 </html>

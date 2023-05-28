@@ -31,6 +31,7 @@ public class ProductDao {
 				row.setId(rs.getInt("id"));
 				row.setName(rs.getString("name"));
 				row.setCategory(rs.getString("category"));
+				row.setImage(rs.getString("image"));
 				row.setPrice(rs.getInt("price"));
 				row.setImage(rs.getString("image"));
 
@@ -108,7 +109,8 @@ public class ProductDao {
 						row.setCategory(rs.getString("category"));
 						row.setPrice(rs.getInt("price") * item.getQuantity());
 						row.setQuantity(item.getQuantity());
-						
+						row.setImage(rs.getString("image"));
+
 						book.add(row);
 					}
 

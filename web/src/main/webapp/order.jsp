@@ -33,7 +33,7 @@
 </head>
 <body>
 <%@include file = "includes/nav.jsp" %>
-	<div class="container">
+	<div class="container1">
 		<table class="table">
 			<thead>
 				<tr>

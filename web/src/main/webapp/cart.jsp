@@ -70,7 +70,7 @@ body {
 						String formattedPrice = formatter.format(price);
 				%>
 				<tr>
-					<td><%=c.getName()%></td>
+					<td><img class="card-img-top" src="./product-images/<%=c.getImage()%>"></td>
 					<td><%=c.getCategory()%></td>
 					<td>$ <%=formattedPrice%></td>
 					<td>
@@ -100,5 +100,4 @@ body {
 		</table>
 	</div>
 </body>
-</html>
 </html>

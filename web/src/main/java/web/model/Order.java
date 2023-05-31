@@ -5,16 +5,26 @@ public class Order extends Product {
 	private int uid;
 	private int quantity;
 	private String date;
+	private String status;
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public Order() {
 	}
 
-	public Order(int orderId, int uid, int quantity, String date) {
+	public Order(int orderId, int uid, int quantity, String date, String status) {
 		super();
 		this.orderId = orderId;
 		this.uid = uid;
 		this.quantity = quantity;
 		this.date = date;
+		this.status = status;
 	}
 
 	public Order(int uid, int quantity, String date) {

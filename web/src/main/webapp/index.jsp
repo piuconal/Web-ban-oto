@@ -29,7 +29,7 @@ if (cart_list != null) {
 <link rel="icon" href="./product-images/icontab.png">
 </head>
 <body>
-	<style>
+<style>
 body {
 	background: url("./product-images/hot.png");
 }

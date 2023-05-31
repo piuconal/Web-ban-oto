@@ -1,0 +1,46 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.table {
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px solid #ddd;
+}
+
+.table th, .table td{
+  background-color: #f2f2f2;
+	padding: 8px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+.table th {
+	background-color: #f2f2f2;
+  font-weight: 700;
+  opacity: 1.5;
+}
+
+.container {
+	margin: auto;
+	width: 90%;
+	padding-top: 20px;
+}
+h1{
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.btn{
+  width: 60px;
+  height: 25px;
+  background: yellow;
+  border-radius: 5px;
+}
+.btn:hover{
+  scale: 1.2;
+}

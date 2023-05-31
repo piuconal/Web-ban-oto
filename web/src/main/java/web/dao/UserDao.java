@@ -37,5 +37,21 @@ public class UserDao {
 		}
 		return user;
 	}
+	public String getUsernameByUserId(int userId) {
+	    String username = null;
+	    try {
+	        query = "select name from cart.users where id=?";
+	        pst = this.con.prepareStatement(query);
+	        pst.setInt(1, userId);
+	        rs = pst.executeQuery();
+	        if (rs.next()) {
+	            username = rs.getString("name");
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        System.out.println(e.getMessage());
+	    }
+	    return username;
+	}
 
 }

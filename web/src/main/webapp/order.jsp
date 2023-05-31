@@ -33,11 +33,9 @@ if (cart_list != null) {
 <link rel="stylesheet" href="./css/cart.css">
 </head>
 <body>
-<<<<<<< HEAD
+
 <%@include file = "includes/nav.jsp" %>
-=======
-	<%@include file="includes/nav.jsp"%>
->>>>>>> 411c7ea6d90896c4cdcdfe3c9c3642d07151e24a
+
 	<div class="container1">
 		<table class="table">
 			<thead>
@@ -48,6 +46,7 @@ if (cart_list != null) {
 					<th scope="col">Quantity</th>
 					<th scope="col">Price</th>
 					<th scope="col">Cancel</th>
+					<th scope ="col">Status</th>
 				</tr>
 			</thead>
 
@@ -69,8 +68,10 @@ if (cart_list != null) {
 					<td><%=o.getCategory()%></td>
 					<td><%=o.getQuantity()%></td>
 					<td>$<%=formattedPrice%></td>
+				
 					<td><a class="btn btn-danger"
 						href="cancel-order?id=<%=o.getOrderId()%>">Cancel</a></td>
+							<td><%=o.getStatus() %></td>
 				<tr>
 					<%
 					}

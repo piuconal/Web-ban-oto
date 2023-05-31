@@ -34,7 +34,7 @@ if (cart_list != null) {
 </head>
 <body>
 
-<%@include file = "includes/nav.jsp" %>
+	<%@include file="includes/nav.jsp"%>
 
 	<div class="container1">
 		<table class="table">
@@ -46,7 +46,7 @@ if (cart_list != null) {
 					<th scope="col">Quantity</th>
 					<th scope="col">Price</th>
 					<th scope="col">Cancel</th>
-					<th scope ="col">Status</th>
+					<th scope="col">Status</th>
 				</tr>
 			</thead>
 
@@ -68,10 +68,10 @@ if (cart_list != null) {
 					<td><%=o.getCategory()%></td>
 					<td><%=o.getQuantity()%></td>
 					<td>$<%=formattedPrice%></td>
-				
+
 					<td><a class="btn btn-danger"
 						href="cancel-order?id=<%=o.getOrderId()%>">Cancel</a></td>
-							<td><%=o.getStatus() %></td>
+					<td><%=o.getStatus()%></td>
 				<tr>
 					<%
 					}

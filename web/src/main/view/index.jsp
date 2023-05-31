@@ -18,6 +18,8 @@ ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
 if (cart_list != null) {
 	request.setAttribute("cart_list", cart_list);
 }
+
+session.setAttribute("auth", auth);
 %>
 
 <!DOCTYPE html>
@@ -29,7 +31,7 @@ if (cart_list != null) {
 <link rel="icon" href="./product-images/icontab.png">
 </head>
 <body>
-<style>
+	<style>
 body {
 	background: url("./product-images/hot.png");
 }

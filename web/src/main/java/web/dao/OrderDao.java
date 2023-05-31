@@ -83,27 +83,27 @@ public class OrderDao {
 	}
 
 	public List<Order> getAllOrders() {
-	    List<Order> orders = new ArrayList<>();
-	    try {
-	    	query = "SELECT orders.*, products.name, products.price FROM cart.orders INNER JOIN cart.products ON orders.p_id = products.id";
+		List<Order> orders = new ArrayList<>();
+		try {
+			query = "SELECT orders.*, products.name, products.price FROM cart.orders INNER JOIN cart.products ON orders.p_id = products.id";
 
-	        pst = this.con.prepareStatement(query);
-	        rs = pst.executeQuery();
-	        while (rs.next()) {
-	            Order order = new Order();
-	            order.setOrderId(rs.getInt("o_id"));
-	            order.setId(rs.getInt("p_id"));
-	            order.setUid(rs.getInt("u_id"));
-	            order.setQuantity(rs.getInt("o_quantity"));
-	            order.setDate(rs.getString("o_date"));
-	            order.setName(rs.getString("name"));
-	            order.setPrice(rs.getInt("price"));
-	            orders.add(order);
-	        }
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        System.out.println(e.getMessage());
-	    }
-	    return orders;
+			pst = this.con.prepareStatement(query);
+			rs = pst.executeQuery();
+			while (rs.next()) {
+				Order order = new Order();
+				order.setOrderId(rs.getInt("o_id"));
+				order.setId(rs.getInt("p_id"));
+				order.setUid(rs.getInt("u_id"));
+				order.setQuantity(rs.getInt("o_quantity"));
+				order.setDate(rs.getString("o_date"));
+				order.setName(rs.getString("name"));
+				order.setPrice(rs.getInt("price"));
+				orders.add(order);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+		return orders;
 	}
 }

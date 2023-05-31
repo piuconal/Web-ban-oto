@@ -1,4 +1,4 @@
-package web.servlet;
+package web.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -42,8 +42,6 @@ public class AddToCartServlet extends HttpServlet {
 				for (Cart c : cart_list) {
 					if (c.getId() == id) {
 						exist = true;
-						out.println(
-								"<h3 style='color:crimson; text-align: center'>Car already in cart. <a href='cart.jsp'>Go to Cart Page</a></h3>");
 					}
 				}
 

@@ -8,12 +8,7 @@ PreparedStatement deleteStatement = null;
 try {
 	String url = "jdbc:mysql://localhost:3306/cart";
 	String username = "root";
-
-
-	String password = "1234";
-
-
-
+	String password = "110602@Hc";
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	connection = DriverManager.getConnection(url, username, password);
 } catch (ClassNotFoundException e) {

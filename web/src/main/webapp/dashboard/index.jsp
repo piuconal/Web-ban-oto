@@ -29,6 +29,14 @@ ResultSet resultSet = statement.executeQuery(selectQuery);
 <title>Product List</title>
 </head>
 <style>
+body {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	height: 550px;
+	font-family: Arial, sans-serif;
+}
+
 table {
 	width: 100%;
 	border-collapse: collapse;
@@ -54,15 +62,6 @@ th {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-}
-
-.form-container {
-	width: 400px;
-	padding: 20px;
-	border: 1px solid #ddd;
-	border-radius: 5px;
-	background-color: #f2f2f2;
-	margin: 0 auto;
 }
 
 .form-container h2 {
@@ -120,63 +119,166 @@ th {
 .delete-button {
 	background-color: #F44336;
 }
+
+.form-container {
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	padding: 20px;
+	border-radius: 5px;
+	width: 300px;
+	height: 630px;
+}
+
+.form-container label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.form-container input[type="text"], .form-container input[type="number"]
+	{
+	width: 100%;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.form-container input[type="submit"] {
+	padding: 10px 20px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+.product-list-container {
+	width: 77%;
+}
+
+.product-list {
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	padding: 20px;
+	border-radius: 5px;
+	height: 550px; /* Chiều cao cố định */
+	overflow: auto; /* Tạo thanh cuộn */
+}
+
+.product-list-item {
+	margin-bottom: 10px;
+}
 </style>
 <body>
 	<div class="container">
 		<div class="form-container">
-			<form method="post" action="create.jsp" enctype="multipart/form-data">
+			<form method="post" action="#" enctype="multipart/form-data">
 				<h2>Create Product</h2>
 				<label for="name">Name:</label> <input type="text" id="name"
 					name="name" required><br> <br> <label for="price">Price:</label>
 				<input type="number" id="price" name="price" step="0.01" required><br>
 				<br> <label for="category">Category:</label> <input type="text"
 					id="category" name="category" required><br> <br>
-				<label for="image">Image:</label> <input type="file" id="image"
+
+				<label for="image">Image:</label> <input type="text" id="image"
 					name="image" required><br> <br> <input
 					type="submit" value="Create">
 			</form>
-
-
 		</div>
 	</div>
-	<h1>Product List</h1>
-	<table>
-		<tr>
-			<th>ID</th>
-			<th>Name</th>
-			<th>Price</th>
-			<th>Category</th>
-			<th>Image</th>
-			<th>Action</th>
-		</tr>
-		<%
-		while (resultSet.next()) {
-			double price = resultSet.getInt("price");
 
-			DecimalFormatSymbols symbols = new DecimalFormatSymbols();
-			symbols.setGroupingSeparator(',');
-			DecimalFormat formatter = new DecimalFormat("#,###", symbols);
-			String formattedPrice = formatter.format(price);
-		%>
-		<tr>
-			<td><%=resultSet.getInt("id")%></td>
-			<td><%=resultSet.getString("name")%></td>
-			<td>$ <%=formattedPrice%></td>
-			<td><%=resultSet.getString("category")%></td>
-			<td class="image-cell"><img class="card-img-top"
-				src="<%=request.getContextPath()%>/product-images/<%=resultSet.getString("image")%>"
-				alt="Product Image"></td>
-			<td><div class="action-buttons">
-					<a class="edit-button"
-						href="edit.jsp?id=<%=resultSet.getInt("id")%>">Edit</a> <a
-						class="delete-button"
-						href="delete.jsp?id=<%=resultSet.getInt("id")%>"
-						onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
-				</div></td>
-		</tr>
-		<%
-		}
-		%>
-	</table>
+	<div class="product-list-container">
+		<h1>Product List</h1>
+		<div class="product-list">
+			<table>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Category</th>
+					<th>Image</th>
+					<th>Action</th>
+				</tr>
+				<%
+				while (resultSet.next()) {
+					double price = resultSet.getInt("price");
+
+					DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+					symbols.setGroupingSeparator(',');
+					DecimalFormat formatter = new DecimalFormat("#,###", symbols);
+					String formattedPrice = formatter.format(price);
+				%>
+				<tr>
+					<td><%=resultSet.getInt("id")%></td>
+					<td><%=resultSet.getString("name")%></td>
+					<td>$ <%=formattedPrice%></td>
+					<td><%=resultSet.getString("category")%></td>
+					<td class="image-cell"><img class="card-img-top"
+						src="<%=request.getContextPath()%>/product-images/<%=resultSet.getString("image")%>"
+						alt="Product Image"></td>
+					<td><div class="action-buttons">
+							<a class="edit-button"
+								href="edit.jsp?id=<%=resultSet.getInt("id")%>">Edit</a> <a
+								class="delete-button"
+								href="delete.jsp?id=<%=resultSet.getInt("id")%>"
+								onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
+						</div></td>
+				</tr>
+				<%
+				}
+				%>
+			</table>
+		</div>
+	</div>
+	<script>
+		document
+				.addEventListener(
+						'DOMContentLoaded',
+						function() {
+							document
+									.querySelector('form')
+									.addEventListener(
+											'submit',
+											function(event) {
+												event.preventDefault(); // Ngăn chặn việc gửi biểu mẫu theo cách mặc định
+
+												// Lấy dữ liệu từ các trường nhập liệu
+												var name = document
+														.getElementById('name').value;
+												var price = document
+														.getElementById('price').value;
+												var category = document
+														.getElementById('category').value;
+												var image = document
+														.getElementById('image').value;
+
+												// Gửi yêu cầu AJAX đến máy chủ để thêm dữ liệu
+												var xhr = new XMLHttpRequest();
+												xhr.open('POST', 'create.jsp',
+														true);
+												xhr
+														.setRequestHeader(
+																'Content-Type',
+																'application/x-www-form-urlencoded');
+												xhr.onreadystatechange = function() {
+													if (xhr.readyState === XMLHttpRequest.DONE
+															&& xhr.status === 200) {
+														// Xử lý phản hồi từ máy chủ (nếu cần)
+														location.reload(); // Tải lại trang để cập nhật bảng dữ liệu
+													}
+												};
+
+												// Chuẩn bị dữ liệu để gửi đi
+												var params = 'name='
+														+ encodeURIComponent(name)
+														+ '&price='
+														+ encodeURIComponent(price)
+														+ '&category='
+														+ encodeURIComponent(category)
+														+ '&image='
+														+ encodeURIComponent(image);
+												// Gửi yêu cầu
+												xhr.send(params);
+											});
+						});
+	</script>
+
 </body>
 </html>

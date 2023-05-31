@@ -12,7 +12,7 @@ try {
 
 	String password = "1234";
 
-	String password = "110602@Hc";
+
 
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	connection = DriverManager.getConnection(url, username, password);

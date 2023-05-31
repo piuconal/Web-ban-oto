@@ -50,13 +50,23 @@
 				<td><%= order.getName() %></td>
 				<td><%= order.getPrice() %></td>
 				<td><%= order.getDate() %></td>
-				<td><button class = "btn brn-confirm">Confirm</button></td>
-				<td><button class = "btn btn-cancel">Cancel</button></td>
-				<td><button class= "btn btn-status">Waiting..</button>
+				<td><button class = "btn" id ="btn-confirm">Confirm</button></td>
+				<td><button class = "btn" id = "btn-cancel">Cancel</button></td>
+                <td><button class= "btn" id = "btn-status">Waiting..</button></td>
 			</tr>
 			<% } %>
 		</tbody>
 	</table>
+	</div>
+	<div id="confirmPopup" class="popup">
+		<div class="popup-content">
+		  <h2>Xác nhận đơn hàng</h2>
+		  <p>Bạn có chắc chắn muốn xác nhận đơn hàng này?</p>
+		  <div class="popup-buttons">
+			<button class="btn btn-confirm-popup">Xác nhận</button>
+			<button class="btn btn-cancel-popup">Hủy</button>
+		  </div>
+		</div>
 	</div>
 </body>
 </html>

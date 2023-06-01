@@ -18,30 +18,32 @@ import web.dao.UserDao;
 @WebServlet("/sign-up")
 public class SignUp extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SignUp() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public SignUp() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
 			String ten = request.getParameter("name");
 			String email = request.getParameter("email");
 			String matKhau = request.getParameter("password");
-			request.setAttribute("ten", ten);		
+			request.setAttribute("ten", ten);
 			request.setAttribute("email", email);
 			request.setAttribute("matKhau", matKhau);
-			
+
 			String url = "";
-			
+
 			String baoLoi = "";
 			UserDao userDao = new UserDao(DbCon.getConnection());
 		} catch (ClassNotFoundException e) {
@@ -51,13 +53,15 @@ public class SignUp extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

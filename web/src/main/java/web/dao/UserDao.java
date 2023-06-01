@@ -26,14 +26,14 @@ public class UserDao {
 			query = "select * from cart.users";
 			pst = this.con.prepareStatement(query);
 			rs = pst.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				int maKhachHang = rs.getInt("id");
 				String name = rs.getString("name");
 				String email = rs.getString("email");
 				String password = rs.getString("password");
 				String isAdmin = rs.getString("isadmin");
 				String isAdminProduct = rs.getString("isadminproduct");
-				
+
 				User user = new User(maKhachHang, name, email, password, isAdmin, isAdminProduct);
 				ketQua.add(user);
 			}
@@ -122,12 +122,12 @@ public class UserDao {
 		}
 		return isAdminProduct;
 	}
-	
+
 	public int insertUser(User user) {
 		int ketQua = 0;
 		try {
-			query = "insert into cart.users(id, name, email, password, isadmin, isadminproduct)" 
-			+ " values (?,?,?,?,?,?)";
+			query = "insert into cart.users(id, name, email, password, isadmin, isadminproduct)"
+					+ " values (?,?,?,?,?,?)";
 			pst = this.con.prepareStatement(query);
 			pst.setInt(1, user.getId());
 			pst.setString(2, user.getName());
@@ -140,7 +140,7 @@ public class UserDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return ketQua;
 	}
 

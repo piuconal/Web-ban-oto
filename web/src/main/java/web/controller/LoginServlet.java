@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 				boolean isAdmin = udao.isAdmin(emailAD);
 
 				if (isAdmin) {
-					response.sendRedirect("thongke.jsp");
+					response.sendRedirect("./dashboard/thongke.jsp");
 				} else {
 //						request.getSession().setAttribute("auth", user);
 					response.sendRedirect("index.jsp");

@@ -31,6 +31,7 @@ if (cart_list != null) {
 <title>Order</title>
 
 <link rel="stylesheet" href="./css/cart.css">
+<link rel="icon" href="./product-images/icontab.png">
 </head>
 <body>
 

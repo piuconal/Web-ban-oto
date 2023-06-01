@@ -97,6 +97,21 @@
 	transform: scale(1.05);
 }
 
+.add-buy {
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: #80ff80;
+	color: black;
+	text-decoration: none;
+	border-radius: 3px;
+	margin-right: 5px;
+}
+
+.add-buy:hover {
+	background-color: #80ff00;
+	transform: scale(1.05);
+}
+
 /* Xóa float cho phần tử .box-content */
 .clearfix::after {
 	content: "";

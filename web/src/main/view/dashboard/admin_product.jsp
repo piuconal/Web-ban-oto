@@ -28,6 +28,7 @@ ResultSet resultSet = statement.executeQuery(selectQuery);
 <meta charset="ISO-8859-1">
 <title>Product List</title>
 <link rel="stylesheet" href="./css/admin_product.css">
+<link rel="icon" href="./product-images/icontab.png">
 </head>
 
 <body>

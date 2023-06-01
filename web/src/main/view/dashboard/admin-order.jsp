@@ -23,6 +23,7 @@ List<Order> orders = orderDao.getAllOrders();
 <meta charset="UTF-8">
 <title>Admin - Orders</title>
 <link rel="stylesheet" href="./css/admin-order.css">
+<link rel="icon" href="./product-images/icontab.png">
 </head>
 <body>
 	<div class="container">

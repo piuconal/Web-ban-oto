@@ -106,6 +106,11 @@ body {
 						<div class="card-btn">
 							<button class="add-btn" onclick="addToCart(<%=p.getId()%>)">Add
 								to cart</button>
+							<select class="add-buy">
+								<option value="">Payment methods</option>
+								<option value="option1">Installment</option>
+								<option value="option2">Pay away</option>
+							</select>
 						</div>
 					</div>
 				</div>

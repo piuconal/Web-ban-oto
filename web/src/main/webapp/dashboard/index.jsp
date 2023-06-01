@@ -8,7 +8,7 @@ Connection connection = null;
 try {
 	String url = "jdbc:mysql://localhost:3306/cart";
 	String username = "root";
-	String password = "110602@Hc";
+	String password = "12345678";
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	connection = DriverManager.getConnection(url, username, password);
 } catch (ClassNotFoundException e) {
@@ -167,6 +167,7 @@ th {
 }
 </style>
 <body>
+<%@include file="includes/tieude.jsp"%>
 	<div class="container">
 		<div class="form-container">
 			<form method="post" action="#" enctype="multipart/form-data">

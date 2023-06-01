@@ -32,6 +32,7 @@ if (auth != null) {
 					</div>
 					<div class="text-center">
 						<button type="submit" class="btn btn-primary">Login</button>
+						<a href="signup.jsp" class="btn btn-primary">Sign up</a>
 					</div>
 				</form>
 			</div>

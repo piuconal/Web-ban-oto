@@ -31,7 +31,7 @@ body {
 	border-radius: 50%;
 }
 
-.navbar-nav a {	
+.navbar-nav a {
 	padding-top: 5%;
 	padding-left: 10%;
 	padding-right: 10%;
@@ -41,7 +41,8 @@ body {
 	text-decoration: none;
 	border: 1px solid black;
 }
-.navbar-nav a:hover{	
+
+.navbar-nav a:hover {
 	background-color: #004080;
 	color: black;
 }

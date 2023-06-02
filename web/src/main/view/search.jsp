@@ -2,8 +2,8 @@
 <%@page import="web.connection.DbCon"%>
 <%@page import="web.model.*"%>
 <%@page import="java.util.*"%>
-<%@ page import="java.text.DecimalFormat"%>
-<%@ page import="java.text.DecimalFormatSymbols"%>
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.text.DecimalFormatSymbols"%>
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
@@ -69,8 +69,8 @@ body {
 		String minPriceStr = request.getParameter("minPrice");
 		String maxPriceStr = request.getParameter("maxPrice");
 		String category = request.getParameter("category");
-		int minPrice = 0; // Default minimum price
-		int maxPrice = Integer.MAX_VALUE; // Default maximum price
+		int minPrice = 0;
+		int maxPrice = Integer.MAX_VALUE;
 
 		if (minPriceStr != null && !minPriceStr.isEmpty()) {
 			minPrice = Integer.parseInt(minPriceStr);
@@ -90,14 +90,11 @@ body {
 					|| (category != null && !category.isEmpty() && !p.getCategory().equalsIgnoreCase(category))
 					|| p.getPrice() < minPrice || p.getPrice() > maxPrice)
 				continue;
-					// Lấy giá trị số từ đối tượng p
 					double price = p.getPrice();
 
-					// Tạo đối tượng DecimalFormatSymbols với mã hóa ISO-8859-1
 					DecimalFormatSymbols symbols = new DecimalFormatSymbols();
 					symbols.setGroupingSeparator(',');
 
-					// Tạo đối tượng DecimalFormat với định dạng số và DecimalFormatSymbols
 					DecimalFormat formatter = new DecimalFormat("#,###", symbols);
 					String formattedPrice = formatter.format(price);
 			%>
@@ -127,23 +124,11 @@ body {
 			</div>
 			<%
 			}
-			} else {
-			out.println("No product");
 			}
 			%>
 		</div>
 
 		<%@include file="includes/footer.jsp"%>
-		<script>
-    function addToCart(productId) {
-    	var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'add-to-cart?id=' + productId, true);
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-            }
-        };
-        xhr.send();
-    }
-</script>
+		<script src="./js/index.js"></script>
 </body>
 </html>

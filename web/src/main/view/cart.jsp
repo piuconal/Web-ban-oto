@@ -3,8 +3,8 @@
 <%@page import="web.connection.DbCon"%>
 <%@page import="java.util.*"%>
 <%@page import="java.text.DecimalFormat"%>
-<%@ page import="java.text.DecimalFormatSymbols"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@page import="java.text.DecimalFormatSymbols"%>
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
 User auth = (User) request.getSession().getAttribute("auth");

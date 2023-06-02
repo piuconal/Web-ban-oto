@@ -6,20 +6,18 @@ public class User {
 	private String email;
 	private String password;
 	private String isAdmin;
-	private String isAdminProduct;
 
 	public User() {
 
 	}
 
-	public User(int id, String name, String email, String password, String isAdmin, String isAdminProduct) {
+	public User(int id, String name, String email, String password, String isAdmin) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.isAdmin = isAdmin;
-		this.isAdminProduct = isAdminProduct;
 	}
 
 	public int getId() {
@@ -60,14 +58,6 @@ public class User {
 
 	public void setIsAdmin(String isAdmin) {
 		this.isAdmin = isAdmin;
-	}
-
-	public String getIsAdminProduct() {
-		return isAdminProduct;
-	}
-
-	public void setIsAdminProduct(String isAdminProduct) {
-		this.isAdminProduct = isAdminProduct;
 	}
 
 }

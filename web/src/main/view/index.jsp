@@ -2,8 +2,8 @@
 <%@page import="web.connection.DbCon"%>
 <%@page import="web.model.*"%>
 <%@page import="java.util.*"%>
-<%@ page import="java.text.DecimalFormat"%>
-<%@ page import="java.text.DecimalFormatSymbols"%>
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.text.DecimalFormatSymbols"%>
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
@@ -30,19 +30,23 @@ session.setAttribute("auth", auth);
 <link rel="stylesheet" href="./css/index.css">
 <link rel="icon" href="./product-images/icontab.png">
 </head>
-<body>
-	<style>
+
+<style>
 body {
 	background: url("./product-images/hot.png");
 }
 </style>
+
+<body>
 	<%@include file="includes/nav.jsp"%>
+
 	<!-- banner -->
 	<div class="banner">
 		<iframe
 			src="https://www.youtube.com/embed/p_is7qzLuFM?autoplay=1&mute=1"></iframe>
 	</div>
 	<!-- end banner -->
+
 	<div class="container">
 		<ul class="menu">
 			<li><a href="search.jsp?category=Bugatti">Bugatti</a></li>
@@ -81,7 +85,7 @@ body {
 				for (Product p : products) {
 					if (searchKeyword != null && !searchKeyword.isEmpty()
 					&& !p.getName().toLowerCase().contains(searchKeyword.toLowerCase())) {
-				continue; // Skip this product if it doesn't match the search keyword
+				continue;
 					}
 					double price = p.getPrice();
 
@@ -117,24 +121,12 @@ body {
 			</div>
 			<%
 			}
-			} else {
-			out.println("No product");
 			}
 			%>
 		</div>
 	</div>
 	<%@include file="includes/footer.jsp"%>
 
-	<script>
-    function addToCart(productId) {
-    	var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'add-to-cart?id=' + productId, true);
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-            }
-        };
-        xhr.send();
-    }
-</script>
+	<script src="./js/index.js"></script>
 </body>
 </html>

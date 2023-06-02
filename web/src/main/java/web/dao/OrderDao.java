@@ -106,4 +106,28 @@ public class OrderDao {
 		}
 		return orders;
 	}
+
+	public List<Order> getAllOrdersProductNames() {
+		List<Order> orders = new ArrayList<>();
+		try {
+			String query = "SELECT products.name, SUM(orders.o_quantity) AS total_quantity\n" + "FROM cart.orders\n"
+					+ "INNER JOIN cart.products ON orders.p_id = products.id\n" + "GROUP BY products.name";
+
+			PreparedStatement pst = this.con.prepareStatement(query);
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				Order order = new Order();
+				order.setName(rs.getString("name"));
+				order.setQuantity(rs.getInt("total_quantity"));
+				orders.add(order);
+			}
+			rs.close();
+			pst.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+		return orders;
+	}
+
 }

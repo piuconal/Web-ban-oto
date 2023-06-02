@@ -59,7 +59,7 @@ button:hover {
 </style>
 </head>
 <body>
-	<%@include file="/includes/tieude.jsp"%>
+	<%@include file="./includes/tieude.jsp"%>
 	<h1>Day la trang thong ke tai khoan</h1>
 	<div class="table-container">
 		<table>
@@ -68,7 +68,6 @@ button:hover {
 				<th>Name</th>
 				<th>Email</th>
 				<th>Is Admin</th>
-				<th>Is Admin Product</th>
 			</tr>
 			<%
 			if (!users.isEmpty()) {
@@ -79,7 +78,6 @@ button:hover {
 				<td><%=us.getName()%></td>
 				<td><%=us.getEmail()%></td>
 				<td><%=us.getIsAdmin()%></td>
-				<td><%=us.getIsAdminProduct()%></td>
 				<td><button>Sửa tài khoản</button></td>
 			</tr>
 			<%

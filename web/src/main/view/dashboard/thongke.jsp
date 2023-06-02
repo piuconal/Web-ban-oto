@@ -1,3 +1,4 @@
+<%@page import="web.dao.OrderDao"%>
 <%@page import="web.dao.UserDao"%>
 <%@page import="web.dao.ProductDao"%>
 <%@page import="web.connection.DbCon"%>
@@ -8,14 +9,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
-User auth = (User) request.getSession().getAttribute("auth");
+User auth = (User) request.getSession().getAttribute("");
 if (auth != null) {
-	request.setAttribute("auth", auth);
+	request.setAttribute("admin", auth);
 }
+ProductDao productDao = new ProductDao(DbCon.getConnection());
+OrderDao orderDao = new OrderDao(DbCon.getConnection());
+List<Order> orders = orderDao.getAllOrders();
+List<Order> theoSP = orderDao.getAllOrdersProductNames();
 
-UserDao userDao = new UserDao(DbCon.getConnection());
-ArrayList<User> users = userDao.selectAllUser();
-session.setAttribute("auth", auth);
+// UserDao userDao = new UserDao(DbCon.getConnection());
+// ArrayList<User> users = userDao.selectAllUser();
 %>
 <!DOCTYPE html>
 <html>
@@ -59,34 +63,85 @@ button:hover {
 </style>
 </head>
 <body>
-	<%@include file="/includes/tieude.jsp"%>
-	<h1>Day la trang thong ke</h1>
+	<%@include file="./includes/tieude.jsp"%>
 	<div class="table-container">
 		<table>
-			<tr>
-				<th>Id User</th>
-				<th>Name</th>
-				<th>Email</th>
-				<th>Is Admin</th>
-				<th>Is Admin Product</th>
-			</tr>
+			<thead>
+				<tr>
+					<th>Order id</th>
+					<th>Product id</th>
+					<th>Name</th>
+					<th>Quantity</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
 			<%
-			if (!users.isEmpty()) {
-				for (User us : users) {
+			for (Order o : orders) {
 			%>
 			<tr>
-				<td><%=us.getId()%></td>
-				<td><%=us.getName()%></td>
-				<td><%=us.getEmail()%></td>
-				<td><%=us.getIsAdmin()%></td>
-				<td><%=us.getIsAdminProduct()%></td>
-				<td><button>Sửa tài khoản</button></td>
+				<td><%=o.getOrderId()%></td>
+				<td><%=o.getId()%></td>
+				<td><%=o.getName()%></td>
+				<td><%=o.getQuantity()%></td>
+				<td><%=o.getPrice()%></td>
 			</tr>
 			<%
 			}
-			}
 			%>
+
 		</table>
-	</div>
+		<h1>Thống kê theo số lượng sản phẩm</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Quantity</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+			<%
+			for (Order t : theoSP) {
+			%>
+			<tr>
+				<td><%=t.getName()%></td>
+				<td><%=t.getQuantity()%></td>
+			</tr>
+			<%
+			}
+			%>
+
+		</table>
+		<form action="" method="GET">
+			<label for="productName">Chọn tên sản phẩm:</label> <select
+				name="productName" id="productName">
+				<%
+				for (Order order : orders) {
+				%>
+				<option value="<%=order.getName()%>"><%=order.getName()%></option>
+				<%
+				}
+				%>
+			</select> <input type="submit" value="Xem số lượng">
+		</form>
+		<%
+		String selectedProduct = request.getParameter("productName");
+		if (selectedProduct != null) {
+			for (Order order : orders) {
+				if (order.getName().equals(selectedProduct)) {
+		%>
+		<h1>Kết quả</h1>
+		<p>
+			Tên sản phẩm:
+			<%=order.getName()%></p>
+		<p>
+			Số lượng:
+			<%=order.getQuantity()%></p>
+		<%
+		}
+		}
+		}
+		%>
+	
 </body>
 </html>

@@ -30,14 +30,12 @@
 	background: #090705;
 }
 /* end banner */
-/* Kiểu cho phần tử .box-content */
 .box-content {
 	width: 25%;
 	padding: 30px 10px 20px 10px;
 	float: left;
 }
 
-/* Kiểu cho phần tử .card */
 .card {
 	border: 1px solid #ccc;
 	border-radius: 5px;
@@ -45,16 +43,13 @@
 	background-color: #fff;
 }
 
-/* Kiểu cho phần tử .card-img-top */
 .card-img-top {
 	width: 100%;
-	height: 200px; /* Đặt kích thước cố định cho chiều cao của ảnh */
+	height: 200px;
 	object-fit: cover;
-	/* Đảm bảo ảnh sẽ được hiển thị đầy đủ và không bị kéo dãn */
 	border-radius: 5px;
 }
 
-/* Kiểu cho phần tử .card-title */
 .card-title {
 	font-size: 18px;
 	font-weight: bold;
@@ -62,26 +57,22 @@
 	margin-bottom: 5px;
 }
 
-/* Kiểu cho phần tử .price */
 .price {
 	font-size: 16px;
 	color: #007bff;
 	margin-bottom: 10px;
 }
 
-/* Kiểu cho phần tử .category */
 .category {
 	font-size: 14px;
 	color: #666;
 	margin-bottom: 10px;
 }
 
-/* Kiểu cho phần tử .card-btn */
 .card-btn {
 	margin-top: 10px;
 }
 
-/* Kiểu cho phần tử .add-btn và .buy-btn */
 .add-btn {
 	display: inline-block;
 	padding: 5px 10px;
@@ -112,7 +103,6 @@
 	transform: scale(1.05);
 }
 
-/* Xóa float cho phần tử .box-content */
 .clearfix::after {
 	content: "";
 	display: table;

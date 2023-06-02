@@ -37,14 +37,16 @@ public class LoginServlet extends HttpServlet {
 			try {
 				UserDao udao = new UserDao(DbCon.getConnection());
 				User user = udao.userLogin(email, password);
-				request.getSession().setAttribute("auth", user);
 
 				String emailAD = user.getEmail();
 				boolean isAdmin = udao.isAdmin(emailAD);
 
 				if (isAdmin) {
+					request.getSession().setAttribute("admin", user);
 					response.sendRedirect("./dashboard/thongke.jsp");
+
 				} else {
+					request.getSession().setAttribute("auth", user);
 //						request.getSession().setAttribute("auth", user);
 					response.sendRedirect("index.jsp");
 				}

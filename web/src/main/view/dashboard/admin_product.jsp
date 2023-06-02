@@ -17,7 +17,6 @@ try {
 	e.printStackTrace();
 }
 
-// Retrieve products from the database
 String selectQuery = "SELECT * FROM cart.products";
 Statement statement = connection.createStatement();
 ResultSet resultSet = statement.executeQuery(selectQuery);

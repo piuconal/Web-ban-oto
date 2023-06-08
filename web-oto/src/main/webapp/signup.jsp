@@ -5,11 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <style>
+body{
+	background-image: url("./product-images/login.png");
+	background-size: cover;
+}
+
 .signup-container {
+	margin: 150px 0 0 100px;
 	max-width: 400px;
-	margin: 0 auto;
 	padding: 20px;
-	background-color: #f2f2f2;
 	border-radius: 5px;
 }
 
@@ -54,25 +58,28 @@
 </style>
 </head>
 <body>
+	
 	<div class="signup-container">
-		<h2>Đăng ký</h2>
+		<h2>Signup</h2>
 		<form class="signup-form" action="sign-up" method="post">
 			<div class="form-group">
-				<label for="name">Tên:</label> <input type="text" id="name"
+				<label for="name">Name</label> <input type="text" id="name"
 					name="name" required>
 			</div>
 			<div class="form-group">
-				<label for="email">Email:</label> <input type="email" id="email"
+				<label for="email">Email</label> <input type="email" id="email"
 					name="email" required>
 			</div>
 			<div class="form-group">
-				<label for="password">Mật khẩu:</label> <input type="password"
+				<label for="password">Password</label> <input type="password"
 					id="password" name="password" required>
 			</div>
 			<div class="form-group">
-				<input type="submit" value="Đăng ký">
+				<input type="submit" value="Signup" style = "margin-right:50px">
+				<a href = "login.jsp" style = "color:red">Đã có tài khoản</a>
 			</div>
 		</form>
 	</div>
 </body>
 </html>
+

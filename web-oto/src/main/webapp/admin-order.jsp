@@ -12,6 +12,7 @@
 	pageEncoding="UTF-8"%>
 
 <%
+
     ProductDao productDap =  new ProductDao(DbCon.getConnection());
     UserDao userDao = new UserDao(DbCon.getConnection());
     OrderDao orderDao = new OrderDao(DbCon.getConnection());
@@ -26,6 +27,7 @@
 <link rel="stylesheet" href="./css/admin-order.css">
 </head>
 <body>
+<%@include file="includes/tieude.jsp"%>
 	<div class="container">
 		<h1 class="title">Quản lý đơn hàng</h1>
 		<table class="table">

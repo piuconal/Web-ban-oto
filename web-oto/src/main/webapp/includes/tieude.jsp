@@ -30,8 +30,11 @@ style>body {
 </head>
 <body>
 	<div class="navbar">
-		<a href="thongke.jsp">Report</a> <a href="admin_product.jsp">Product
-			Management</a> <a href="#">User Management</a>
+		<a href="thongke.jsp">Report</a> 
+		<a href="admin_product.jsp">Product Management</a>  
+		<a href ="admin-order.jsp">Order Management</a>
+		<a href="userManagement.jsp">User Management</a>
+		
 	</div>
 </body>
 

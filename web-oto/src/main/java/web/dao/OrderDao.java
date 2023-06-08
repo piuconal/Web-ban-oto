@@ -108,7 +108,7 @@ public class OrderDao {
 	    }
 	    return orders;
 	}
-
+///---vu dung---////
 	public List<Order> getAllOrdersProductNames() {
 		List<Order> orders = new ArrayList<>();
 		try {
@@ -131,5 +131,108 @@ public class OrderDao {
 		}
 		return orders;
 	}
+	
+	
+	
+	//get id user by Order Product
+		public List<Order> getUserbyProductOrder(){
+			List<Order> orders = new ArrayList<>();
+			try {
+				String query = "SELECT orders.u_id AS u_id, products.name AS product_name, SUM(orders.o_quantity) AS total_quantity\n"
+						+ "FROM cart.orders\n"
+						+ "INNER JOIN cart.products ON orders.p_id = products.id\n"
+						+ "GROUP BY orders.u_id, products.name";
+				pst = this.con.prepareStatement(query);
+				rs = pst.executeQuery();
+				while (rs.next()) {
+					Order order = new Order();
+					order.setUid(rs.getInt("u_id"));
+					order.setName(rs.getString("product_name"));
+					order.setQuantity(rs.getInt("total_quantity"));
+					orders.add(order);
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+			return orders;
+		}
+		
+
+		// get sp by date
+		public List<Order> getAllOrdersProductNamesByDate() {
+			List<Order> orders = new ArrayList<>();
+			try {
+				String query = "SELECT orders.o_date, products.name, SUM(orders.o_quantity) AS total_quantity "
+						+ "FROM cart.orders " + "INNER JOIN cart.products ON orders.p_id = products.id "
+						+ "WHERE orders.o_status = 'done' " + "GROUP BY orders.o_date, products.name";
+
+				pst = this.con.prepareStatement(query);
+				rs = pst.executeQuery();
+				while (rs.next()) {
+					Order order = new Order();
+					order.setDate(rs.getString("o_date"));
+					order.setName(rs.getString("name"));
+					order.setQuantity(rs.getInt("total_quantity"));
+					orders.add(order);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(e.getMessage());
+			}
+			return orders;
+		}
+
+		//get orders by user
+		public List<Order> getOrdersByUser() {
+			List<Order> orders = new ArrayList<>();
+			try {
+				String query = "SELECT users.name AS user_name, products.name AS product_name, SUM(orders.quantity) AS total_quantity "
+						+ "FROM cart.orders " + "INNER JOIN cart.users ON orders.uid = users.id "
+						+ "INNER JOIN cart.products ON orders.pid = products.id " + "GROUP BY users.name, products.name";
+
+				pst = this.con.prepareStatement(query);
+				rs = pst.executeQuery();
+				while (rs.next()) {
+					Order order = new Order();
+					order.setUid(rs.getInt("u_id"));
+//					order.setUserName(UserDao.getUsernameByUserId(rs.getInt("u_id")));
+					order.setName(rs.getString("product_name"));
+					order.setQuantity(rs.getInt("total_quantity"));
+					orders.add(order);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(e.getMessage());
+			}
+			return orders;
+		}
+		
+		// get product by User
+		public List<Order> getUsersByProduct() {
+			  List<Order> orders = new ArrayList<>();
+
+			  try {
+				query = "SELECT orders.u_id AS u_id, products.name AS product_name, SUM(orders.o_quantity) AS total_quantity\n"
+						+ "FROM cart.orders\n"
+						+ "INNER JOIN cart.products ON orders.p_id = products.id\n"
+						+ "GROUP BY orders.u_id, products.name";
+			    pst = this.con.prepareStatement(query);
+			    rs = pst.executeQuery();
+
+			    while (rs.next()) {
+			    	Order order = new Order();
+	order.setUid(rs.getInt("u_id"));
+			        order.setName(rs.getString("product_name"));
+			        order.setQuantity(rs.getInt("total_quantity"));
+			        orders.add(order);
+			    }
+			  } catch (Exception e) {
+			    e.printStackTrace();
+			    System.out.println(e.getMessage());
+			  }
+			  return orders;
+		}
+	
 
 }

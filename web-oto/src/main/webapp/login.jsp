@@ -14,6 +14,61 @@ if (auth != null) {
 <meta charset="ISO-8859-1">
 <title>Login</title>
 </head>
+
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	padding-top: 80px;
+	padding-left: 80px;
+	height: 595px;
+	background-image: url("./product-images/login.png");
+	background-size: cover;
+}
+
+.card {
+	border: 2px solid black;
+	border-radius: 20px;
+	width: 25%;
+	height: 400px;
+	margin: 10px;	
+	padding-left: 80px;
+}
+
+.card-header {
+	padding-top: 50px;
+	padding-left: 30px;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+button{
+	margin-top: 20px;
+	padding: 10px 30px;
+	border-radius: 20px;
+}
+button.btn-login{
+	background-color: #f8bbd0;
+	cursor: pointer;
+}
+button.btn-signup{
+	background-color: #8ed1fc;
+	cursor: pointer;
+}
+button:hover{
+	transform: scale(1.05);
+}
+input{
+	width: 200px;
+	padding: 5px;
+	border-radius: 20px;
+}
+.content{
+	width: 100px;
+}
+</style>
 <body>
 	<%@include file="includes/nav.jsp"%>
 	<div class="container">
@@ -22,21 +77,28 @@ if (auth != null) {
 			<div class="card-body">
 				<form action="user-login" method="post">
 					<div class="form-group">
-						<label>Email</label> <input type="email" class="form-control"
+						<label>Email</label>
+						</br> 
+						<input type="email" class="form-control"
 							name="Login-email" placeholder="Enter your email" required>
 					</div>
+					</br>
 					<div class="form-group">
-						<label>Password</label> <input type="password"
+						<label>Password</label> 
+						</br>	
+						<input type="password"
 							class="form-control" name="Login-password"
 							placeholder="Enter your password" required>
 					</div>
 					<div class="text-center">
-						<button type="submit" class="btn btn-primary">Login</button>
+						<button type="submit" class="btn-login">Login</button>
+						<button type="submit" class="btn-signup" id = "signup">Sign up</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-	<%@include file="includes/footer.jsp"%>
+<script src="./js/signup.js"></script>
 </body>
+
 </html>

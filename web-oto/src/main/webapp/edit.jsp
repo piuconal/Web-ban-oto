@@ -3,6 +3,7 @@
 <%@ page import="java.sql.*"%>
 
 <%
+
 Connection connection = null;
 try {
 	String url = "jdbc:mysql://localhost:3306/cart";

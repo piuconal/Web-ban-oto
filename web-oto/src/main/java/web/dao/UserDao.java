@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import web.connection.DbCon;
 import web.model.User;
 
 public class UserDao {
@@ -120,5 +121,26 @@ public class UserDao {
 
 		return ketQua;
 	}
+	
+	public int findSmallestAvailableId() throws SQLException {
+	   
+
+	    try {
+	        con = DbCon.getConnection();
+	        String query = "SELECT MIN(t1.id + 1) AS id FROM cart.users AS t1 LEFT JOIN cart.users AS t2 ON t1.id + 1 = t2.id WHERE t2.id IS NULL";
+
+	        pst = con.prepareStatement(query);
+	        rs = pst.executeQuery();
+
+	        if (rs.next()) {
+	            int smallestId = rs.getInt("id");
+	            return smallestId;
+	        }
+	    } catch (ClassNotFoundException e) {
+	        e.printStackTrace();
+	    } 
+	    return 1;
+	}
+
 
 }

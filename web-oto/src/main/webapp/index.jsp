@@ -69,7 +69,7 @@ body {
 			</form>
 
 			<ul class="menu2">
-				<li><a href="search.jsp?maxPrice=300000">Down $300,000</a></li>
+				<li><a href="search.jsp?maxPsrice=300000">Down $300,000</a></li>
 				<li><a href="search.jsp?minPrice=500000&maxPrice=1000000">$500,000
 						- 1,000,000 </a></li>
 				<li><a href="search.jsp?minPrice=1000000&maxPrice=3000000">$1,000,000

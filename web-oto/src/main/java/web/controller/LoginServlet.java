@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 
 				if (isAdmin) {
 					request.getSession().setAttribute("admin", user);
-					response.sendRedirect("./dashboard/thongke.jsp");
+					response.sendRedirect("thongke.jsp");
 
 				} else {
 					request.getSession().setAttribute("auth", user);

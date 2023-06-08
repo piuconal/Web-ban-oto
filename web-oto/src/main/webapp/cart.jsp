@@ -38,7 +38,7 @@ body {
 	background: url("./product-images/hot.png");
 }
 </style>
-
+     <%@include file="includes/nav.jsp"%>
 	<div class="container1">
 
 		<div class="price">$ ${(total>0)?formattedTotal:0}</div>

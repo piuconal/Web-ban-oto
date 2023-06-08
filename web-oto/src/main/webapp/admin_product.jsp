@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
+<%@ page import="java.sql.*"%>
 <%@ page import="java.text.DecimalFormat"%>
 <%@ page import="java.text.DecimalFormatSymbols"%>
+<%@page import="web.model.*"%>
 <%
 Connection connection = null;
 try {

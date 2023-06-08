@@ -27,7 +27,7 @@ public class Order extends Product {
 	public Order() {
 	}
 
-	public Order(int orderId, int uid, int quantity, String date, String status, String payment) {
+	public Order(int orderId, int uid, int quantity, String date, String status , String payment) {
 		super();
 		this.orderId = orderId;
 		this.uid = uid;

@@ -43,26 +43,13 @@ public class LoginServlet extends HttpServlet {
 
 				if (isAdmin) {
 					request.getSession().setAttribute("admin", user);
-					response.sendRedirect("./dashboard/thongke.jsp");
+					response.sendRedirect("thongke.jsp");
 
 				} else {
 					request.getSession().setAttribute("auth", user);
-//						request.getSession().setAttribute("auth", user);
 					response.sendRedirect("index.jsp");
 				}
 
-//				if (user != null) {
-//					request.getSession().setAttribute("auth", user);
-//					if(isAdmin==true) {
-//						response.sendRedirect("thongke.jsp");
-//					}
-//					else {						
-////						request.getSession().setAttribute("auth", user);
-//						response.sendRedirect("index.jsp");
-//					}
-//				} else {
-//					out.print("user login failed");
-//				}
 			} catch (ClassNotFoundException | SQLException e) {
 				e.printStackTrace();
 			}

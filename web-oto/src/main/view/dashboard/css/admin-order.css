@@ -1,0 +1,89 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.table {
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px solid #ddd;
+}
+
+.table th, .table td {
+	background-color: #f2f2f2;
+	padding: 8px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+
+.table th {
+	background-color: #f2f2f2;
+	font-weight: 700;
+	opacity: 1.5;
+}
+
+.container {
+	margin: auto;
+	width: 90%;
+	padding-top: 20px;
+}
+
+h1 {
+	font-size: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 10px;
+}
+
+.btn {
+	width: 100px;
+	height: 25px;
+	border-radius: 5px;
+}
+
+.btn:hover {
+	scale: 1.2;
+}
+
+#btn-confirm, .btn-confirm-popup {
+	background: rgb(92, 226, 92);
+}
+
+#btn-status {
+	pointer-events: none;
+}
+
+#btn-cancel, .btn-cancel-popup {
+	background: rgb(233, 79, 79);
+}
+
+.popup {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+	background-color: #fff;
+	width: 300px;
+	height: 200px;
+	padding: 20px;
+	margin: 100px auto;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.popup-buttons {
+	margin-top: 20px;
+}
+
+.popup-buttons button {
+	margin-right: 10px;
+}

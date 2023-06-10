@@ -103,6 +103,44 @@ public class UserDao {
 		return isAdmin;
 	}
 
+	public boolean thayDoiTrangThaiAD(String email) {
+		boolean ketQua = false;
+		try {
+			query = "UPDATE sql9624488.users SET isadmin = ? WHERE email = ?";
+			pst = this.con.prepareStatement(query);
+			pst.setString(1, "0");
+			pst.setString(2, email);
+			int t = pst.executeUpdate();
+			if (t > 0) {
+				ketQua = true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return ketQua;
+	}
+
+	public boolean thayDoiTrangThaiUser(String email) {
+		boolean ketQua = false;
+		try {
+			query = "UPDATE sql9624488.users SET isadmin = ? WHERE email = ?";
+			pst = this.con.prepareStatement(query);
+			pst.setString(1, "1");
+			pst.setString(2, email);
+			int t = pst.executeUpdate();
+			if (t > 0) {
+				ketQua = true;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return ketQua;
+	}
+
 	public int insertUser(User user) {
 		int ketQua = 0;
 		try {
@@ -121,26 +159,24 @@ public class UserDao {
 
 		return ketQua;
 	}
-	
+
 	public int findSmallestAvailableId() throws SQLException {
-	   
 
-	    try {
-	        con = DbCon.getConnection();
-	        String query = "SELECT MIN(t1.id + 1) AS id FROM sql9624488.users AS t1 LEFT JOIN sql9624488.users AS t2 ON t1.id + 1 = t2.id WHERE t2.id IS NULL";
+		try {
+			con = DbCon.getConnection();
+			String query = "SELECT MIN(t1.id + 1) AS id FROM sql9624488.users AS t1 LEFT JOIN sql9624488.users AS t2 ON t1.id + 1 = t2.id WHERE t2.id IS NULL";
 
-	        pst = con.prepareStatement(query);
-	        rs = pst.executeQuery();
+			pst = con.prepareStatement(query);
+			rs = pst.executeQuery();
 
-	        if (rs.next()) {
-	            int smallestId = rs.getInt("id");
-	            return smallestId;
-	        }
-	    } catch (ClassNotFoundException e) {
-	        e.printStackTrace();
-	    } 
-	    return 1;
+			if (rs.next()) {
+				int smallestId = rs.getInt("id");
+				return smallestId;
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return 1;
 	}
-
 
 }

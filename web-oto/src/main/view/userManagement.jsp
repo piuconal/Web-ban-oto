@@ -74,7 +74,12 @@ button:hover {
 				<td><%=us.getName()%></td>
 				<td><%=us.getEmail()%></td>
 				<td><%=us.getIsAdmin()%></td>
-				<td><button>Sửa tài khoản</button></td>
+				<td>
+					<form action="thay-doi-trang-thai" method="post">
+						<input type="hidden" name="Email" value="<%=us.getEmail()%>">
+						<button type="submit">Sửa tài khoản</button>
+					</form>
+				</td>
 			</tr>
 			<%
 			}

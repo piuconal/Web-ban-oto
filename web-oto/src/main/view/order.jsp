@@ -44,7 +44,7 @@ if (cart_list != null) {
 					<th>Date</th>
 					<th>Name</th>
 					<th>Category</th>
-					<th>Quantily</th>
+					<th>Quantity</th>
 					<th>Price</th>
 					<th>Cancel</th>
 					<th>Status</th>

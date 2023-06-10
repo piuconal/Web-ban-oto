@@ -48,3 +48,14 @@ body {
 }
 
 /* endmenu */
+@media ( max-width : 980px) {
+	.navbar-nav a {
+		padding-top: 10%;
+	}
+	.navbar-content img {
+		width: 13%;
+	}
+	.navbar-content .navbar-nav {
+		margin-left: 1%;
+	}
+}

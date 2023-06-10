@@ -34,7 +34,7 @@ if (auth != null) {
 	border-radius: 20px;
 	width: 25%;
 	height: 400px;
-	margin: 10px;	
+	margin: 10px;
 	padding-left: 80px;
 }
 
@@ -44,29 +44,46 @@ if (auth != null) {
 	font-size: 30px;
 	margin-bottom: 20px;
 }
-button{
+
+button {
 	margin-top: 20px;
 	padding: 10px 30px;
 	border-radius: 20px;
 }
-button.btn-login{
+
+button.btn-login {
 	background-color: #f8bbd0;
 	cursor: pointer;
 }
-button.btn-signup{
+
+button.btn-signup {
 	background-color: #8ed1fc;
 	cursor: pointer;
 }
-button:hover{
+
+button:hover {
 	transform: scale(1.05);
 }
-input{
+
+input {
 	width: 200px;
 	padding: 5px;
 	border-radius: 20px;
 }
-.content{
+
+.content {
 	width: 100px;
+}
+
+@media ( max-width : 980px) {
+	.card {
+		border: 2px solid black;
+		border-radius: 20px;
+		width: 55%;
+		height: 350px;
+		margin-left: -50px;
+		padding-left: 80px;
+	}
 }
 </style>
 <body>
@@ -77,28 +94,25 @@ input{
 			<div class="card-body">
 				<form action="user-login" method="post">
 					<div class="form-group">
-						<label>Email</label>
-						</br> 
-						<input type="email" class="form-control"
+						<label>Email</label> </br> <input type="email" class="form-control"
 							name="Login-email" placeholder="Enter your email" required>
 					</div>
 					</br>
 					<div class="form-group">
-						<label>Password</label> 
-						</br>	
-						<input type="password"
+						<label>Password</label> </br> <input type="password"
 							class="form-control" name="Login-password"
 							placeholder="Enter your password" required>
 					</div>
 					<div class="text-center">
 						<button type="submit" class="btn-login">Login</button>
-						<button type="submit" class="btn-signup" id = "signup">Sign up</button>
+						<button type="submit" class="btn-signup" id="signup">Sign
+							up</button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-<script src="./js/signup.js"></script>
+	<script src="./js/signup.js"></script>
 </body>
 
 </html>

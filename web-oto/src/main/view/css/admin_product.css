@@ -139,3 +139,15 @@ th {
 .product-list-item {
 	margin-bottom: 10px;
 }
+
+@media ( max-width : 980px) {
+	.form-container {
+		width: 100px;
+	}
+	.action-buttons {
+		margin-left: -10px;
+	}
+	.product-list-container {
+	width: 80%;
+}
+}

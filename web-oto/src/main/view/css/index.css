@@ -99,6 +99,7 @@
 	text-decoration: none;
 	border-radius: 3px;
 	margin-right: 5px;
+	cursor: pointer;
 }
 
 .add-buy:hover {
@@ -139,7 +140,8 @@
 
 ul.menu {
 	width: 100%;
-	padding: 2px; list-style-type : none;
+	padding: 2px;
+	list-style-type: none;
 	margin-top: 20px;
 	background-color: #000;
 	display: flex;
@@ -201,6 +203,11 @@ ul.menu li a:hover {
 
 button {
 	cursor: pointer;
+}
+
+.card-img-top:hover {
+	transform: scale(1.1);
+	transition: 0.5s ease;
 }
 
 @media ( max-width : 980px) {

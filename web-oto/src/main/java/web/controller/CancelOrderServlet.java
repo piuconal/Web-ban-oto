@@ -27,7 +27,6 @@ public class CancelOrderServlet extends HttpServlet {
 			}
 			response.sendRedirect("order.jsp");
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

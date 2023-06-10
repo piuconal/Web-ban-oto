@@ -10,9 +10,9 @@ if (auth != null) {
 session.setAttribute("admin", auth);
 Connection connection = null;
 try {
-	String url = "jdbc:mysql://localhost:3306/cart";
-	String username = "root";
-	String password = "110602@Hc";
+	String url = "jdbc:mysql://sql9.freesqldatabase.com:3306";
+	String username = "sql9624488";
+	String password = "r1qDDsFYhd";
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	connection = DriverManager.getConnection(url, username, password);
 } catch (ClassNotFoundException e) {
@@ -29,7 +29,7 @@ if (request.getMethod().equalsIgnoreCase("post")) {
 	String category = request.getParameter("category");
 	String image = request.getParameter("image");
 
-	String updateQuery = "UPDATE cart.products SET name=?, price=?, category=?, image=? WHERE id=?";
+	String updateQuery = "UPDATE sql9624488.products SET name=?, price=?, category=?, image=? WHERE id=?";
 	PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
 	preparedStatement.setString(1, name);
 	preparedStatement.setDouble(2, price);
@@ -40,7 +40,7 @@ if (request.getMethod().equalsIgnoreCase("post")) {
 
 	response.sendRedirect("admin_product.jsp");
 } else {
-	String selectQuery = "SELECT * FROM cart.products WHERE id=?";
+	String selectQuery = "SELECT * FROM sql9624488.products WHERE id=?";
 	PreparedStatement preparedStatement = connection.prepareStatement(selectQuery);
 	preparedStatement.setInt(1, productId);
 	ResultSet resultSet = preparedStatement.executeQuery();

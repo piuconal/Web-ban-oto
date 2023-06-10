@@ -10,7 +10,8 @@ public class DbCon {
 	public static Connection getConnection() throws SQLException, ClassNotFoundException {
 		if (connection == null) {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cart", "root", "110602@Hc");
+			connection = DriverManager.getConnection("jdbc:mysql://sql9.freesqldatabase.com:3306", "sql9624488",
+					"r1qDDsFYhd");
 			System.out.print("connected");
 		}
 		return connection;

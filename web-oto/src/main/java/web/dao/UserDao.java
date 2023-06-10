@@ -24,7 +24,7 @@ public class UserDao {
 	public ArrayList<User> selectAllUser() {
 		ArrayList<User> ketQua = new ArrayList<User>();
 		try {
-			query = "select * from cart.users";
+			query = "select * from sql9624488.users";
 			pst = this.con.prepareStatement(query);
 			rs = pst.executeQuery();
 			while (rs.next()) {
@@ -47,7 +47,7 @@ public class UserDao {
 	public User userLogin(String email, String password) {
 		User user = null;
 		try {
-			query = "select * from cart.users where email=? and password=?";
+			query = "select * from sql9624488.users where email=? and password=?";
 			pst = this.con.prepareStatement(query);
 			pst.setString(1, email);
 			pst.setString(2, password);
@@ -69,7 +69,7 @@ public class UserDao {
 	public String getUsernameByUserId(int userId) {
 		String username = null;
 		try {
-			query = "select name from cart.users where id=?";
+			query = "select name from sql9624488.users where id=?";
 			pst = this.con.prepareStatement(query);
 			pst.setInt(1, userId);
 			rs = pst.executeQuery();
@@ -86,7 +86,7 @@ public class UserDao {
 	public boolean isAdmin(String email) {
 		boolean isAdmin = false;
 		try {
-			query = "select * from cart.users where email=?";
+			query = "select * from sql9624488.users where email=?";
 			pst = this.con.prepareStatement(query);
 			pst.setString(1, email);
 			rs = pst.executeQuery();
@@ -106,7 +106,7 @@ public class UserDao {
 	public int insertUser(User user) {
 		int ketQua = 0;
 		try {
-			query = "insert into cart.users(id, name, email, password, isadmin)" + " values (?,?,?,?,?)";
+			query = "insert into sql9624488.users(id, name, email, password, isadmin)" + " values (?,?,?,?,?)";
 			pst = this.con.prepareStatement(query);
 			pst.setInt(1, user.getId());
 			pst.setString(2, user.getName());
@@ -127,7 +127,7 @@ public class UserDao {
 
 	    try {
 	        con = DbCon.getConnection();
-	        String query = "SELECT MIN(t1.id + 1) AS id FROM cart.users AS t1 LEFT JOIN cart.users AS t2 ON t1.id + 1 = t2.id WHERE t2.id IS NULL";
+	        String query = "SELECT MIN(t1.id + 1) AS id FROM sql9624488.users AS t1 LEFT JOIN sql9624488.users AS t2 ON t1.id + 1 = t2.id WHERE t2.id IS NULL";
 
 	        pst = con.prepareStatement(query);
 	        rs = pst.executeQuery();

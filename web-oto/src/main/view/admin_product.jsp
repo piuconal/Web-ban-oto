@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
-<%@ page import="java.sql.*"%>
 <%@ page import="java.text.DecimalFormat"%>
 <%@ page import="java.text.DecimalFormatSymbols"%>
 <%@page import="web.model.*"%>
-<%@page import="web.model.*"%>
+<%@page import="web.connection.DbCon"%>
 <%
 User auth = (User) request.getSession().getAttribute("admin");
 if (auth != null) {
@@ -15,9 +14,9 @@ session.setAttribute("admin", auth);
 
 Connection connection = null;
 try {
-	String url = "jdbc:mysql://localhost:3306/cart";
-	String username = "root";
-	String password = "110602@Hc";
+	String url = "jdbc:mysql://sql9.freesqldatabase.com:3306";
+	String username = "sql9624488";
+	String password = "r1qDDsFYhd";
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	connection = DriverManager.getConnection(url, username, password);
 } catch (ClassNotFoundException e) {
@@ -26,7 +25,7 @@ try {
 	e.printStackTrace();
 }
 
-String selectQuery = "SELECT * FROM cart.products";
+String selectQuery = "SELECT * FROM sql9624488.products";
 Statement statement = connection.createStatement();
 ResultSet resultSet = statement.executeQuery(selectQuery);
 %>

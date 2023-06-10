@@ -22,7 +22,7 @@ public class ProductDao {
 		List<Product> book = new ArrayList<>();
 		try {
 
-			query = "select * from cart.products";
+			query = "select * from sql9624488.products";
 			pst = this.con.prepareStatement(query);
 			rs = pst.executeQuery();
 
@@ -48,7 +48,7 @@ public class ProductDao {
 	public Product getSingleProduct(int id) {
 		Product row = null;
 		try {
-			query = "select * from cart.products where id=? ";
+			query = "select * from sql9624488.products where id=? ";
 
 			pst = this.con.prepareStatement(query);
 			pst.setInt(1, id);
@@ -75,7 +75,7 @@ public class ProductDao {
 		try {
 			if (cartList.size() > 0) {
 				for (Cart item : cartList) {
-					query = "select price from cart.products where id=?";
+					query = "select price from sql9624488.products where id=?";
 					pst = this.con.prepareStatement(query);
 					pst.setInt(1, item.getId());
 					rs = pst.executeQuery();
@@ -98,7 +98,7 @@ public class ProductDao {
 		try {
 			if (cartList.size() > 0) {
 				for (Cart item : cartList) {
-					query = "select * from cart.products where id=?";
+					query = "select * from sql9624488.products where id=?";
 					pst = this.con.prepareStatement(query);
 					pst.setInt(1, item.getId());
 					rs = pst.executeQuery();

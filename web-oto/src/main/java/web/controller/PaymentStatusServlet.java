@@ -29,7 +29,7 @@ public class PaymentStatusServlet extends HttpServlet {
             connection = DbCon.getConnection();
 
             // Tạo truy vấn cập nhật
-            String sql = "UPDATE cart.orders SET o_payment = 'Done', o_status = 'Done' WHERE o_id=?";
+            String sql = "UPDATE sql9624488.orders SET o_payment = 'Done', o_status = 'Done' WHERE o_id=?";
             statement = connection.prepareStatement(sql);
             statement.setString(1, orderId);
 

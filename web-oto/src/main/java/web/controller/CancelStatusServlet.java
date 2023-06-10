@@ -25,25 +25,20 @@ public class CancelStatusServlet extends HttpServlet {
         PrintWriter out = null;
 
         try {
-            // Kết nối cơ sở dữ liệu
             connection = DbCon.getConnection();
 
-            // Tạo truy vấn cập nhật
-            String sql = "UPDATE cart.orders SET o_status = 'Canceled', o_payment = 'Canceled' WHERE o_id=?";
+            String sql = "UPDATE sql9624488.orders SET o_status = 'Canceled', o_payment = 'Canceled' WHERE o_id=?";
             statement = connection.prepareStatement(sql);
             statement.setString(1, orderId);
 
-            // Thực hiện cập nhật
             int rowsAffected = statement.executeUpdate();
 
             if (rowsAffected > 0) {
-                // Gửi phản hồi thành công về cho JSP
                 response.setContentType("text/plain");
                 response.setCharacterEncoding("UTF-8");
                 out = response.getWriter();
                 out.write("success");
             } else {
-                // Gửi phản hồi thất bại về cho JSP
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Cập nhật trạng thái không thành công.");
             }
         } catch (SQLException e) {
@@ -53,7 +48,6 @@ public class CancelStatusServlet extends HttpServlet {
             e.printStackTrace();
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Lỗi không tìm thấy lớp driver cơ sở dữ liệu.");
         } finally {
-            // Đóng PreparedStatement
             if (statement != null) {
                 try {
                     statement.close();

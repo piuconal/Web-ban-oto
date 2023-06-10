@@ -13,9 +13,9 @@ Connection connection = null;
 PreparedStatement deleteStatement = null;
 
 try {
-	String url = "jdbc:mysql://localhost:3306/cart";
-	String username = "root";
-	String password = "110602@Hc";
+	String url = "jdbc:mysql://sql9.freesqldatabase.com:3306";
+	String username = "sql9624488";
+	String password = "r1qDDsFYhd";
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	connection = DriverManager.getConnection(url, username, password);
 } catch (ClassNotFoundException e) {
@@ -25,7 +25,7 @@ try {
 }
 
 int productId = Integer.parseInt(request.getParameter("id"));
-String deleteQuery = "DELETE FROM cart.products WHERE id = ?";
+String deleteQuery = "DELETE FROM sql9624488.products WHERE id = ?";
 deleteStatement = connection.prepareStatement(deleteQuery);
 deleteStatement.setInt(1, productId);
 deleteStatement.executeUpdate();

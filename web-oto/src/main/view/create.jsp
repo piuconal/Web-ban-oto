@@ -9,7 +9,6 @@ if (auth != null) {
 }
 session.setAttribute("admin", auth);
 
-
 String name = request.getParameter("name");
 double price = Double.parseDouble(request.getParameter("price"));
 String category = request.getParameter("category");
@@ -17,16 +16,16 @@ String image = request.getParameter("image");
 
 Connection connection = null;
 try {
-	String url = "jdbc:mysql://localhost:3306/cart";
-	String username = "root";
-	String password = "110602@Hc";
+	String url = "jdbc:mysql://sql9.freesqldatabase.com:3306";
+	String username = "sql9624488";
+	String password = "r1qDDsFYhd";
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	connection = DriverManager.getConnection(url, username, password);
 } catch (SQLException e) {
 	e.printStackTrace();
 }
 
-String insertQuery = "INSERT INTO cart.products (name, price, category, image) VALUES (?, ?, ?, ?)";
+String insertQuery = "INSERT INTO sql9624488.products (name, price, category, image) VALUES (?, ?, ?, ?)";
 PreparedStatement statement = connection.prepareStatement(insertQuery);
 statement.setString(1, name);
 statement.setDouble(2, price);

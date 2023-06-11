@@ -70,7 +70,7 @@ if (cart_list != null) {
 					<td><%=o.getQuantity()%></td>
 					<td>$<%=formattedPrice%></td>
 
-					<td><a href="cancel-order?id=<%=o.getOrderId()%>">
+					<td><a href="cancel-order?id=<%=o.getOrderId()%>" class = "cancel-order">
 							<button type="button" class="btn btn-cancel">Cancel</button>
 					</a></td>
 					<td class="status"><%=o.getStatus() %></td>

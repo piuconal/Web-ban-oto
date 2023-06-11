@@ -123,4 +123,41 @@ public class ProductDao {
 		}
 		return book;
 	}
+
+	public List<Product> getProductsByPage(int offset, int limit) {
+		List<Product> products = new ArrayList<>();
+		String query = "SELECT * FROM sql9624488.products LIMIT ?, ?";
+		try (PreparedStatement statement = con.prepareStatement(query)) {
+			statement.setInt(1, offset);
+			statement.setInt(2, limit);
+			ResultSet resultSet = statement.executeQuery();
+			while (resultSet.next()) {
+				int id = resultSet.getInt("id");
+				String name = resultSet.getString("name");
+				String category = resultSet.getString("category");
+				String image = resultSet.getString("image");
+				int price = resultSet.getInt("price");
+
+				Product product = new Product(id, name, category, price, image);
+				products.add(product);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return products;
+	}
+
+	public int getTotalProducts() {
+		int total = 0;
+		String query = "SELECT COUNT(*) AS total FROM sql9624488.products";
+		try (PreparedStatement statement = con.prepareStatement(query);
+				ResultSet resultSet = statement.executeQuery()) {
+			if (resultSet.next()) {
+				total = resultSet.getInt("total");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return total;
+	}
 }

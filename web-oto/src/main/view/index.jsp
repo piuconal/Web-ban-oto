@@ -12,8 +12,14 @@ if (auth != null) {
 	request.setAttribute("auth", auth);
 }
 
+int productsPerPage = 4; // Số sản phẩm trên mỗi trang
+int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1; // Trang hiện tại
+int offset = (currentPage - 1) * productsPerPage; // Vị trí bắt đầu lấy sản phẩm
+
 ProductDao pd = new ProductDao(DbCon.getConnection());
-List<Product> products = pd.getAllProducts();
+List<Product> products = pd.getProductsByPage(offset, productsPerPage); // Lấy danh sách sản phẩm cho trang hiện tại
+int totalProducts = pd.getTotalProducts(); // Tổng số sản phẩm
+
 ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
 if (cart_list != null) {
 	request.setAttribute("cart_list", cart_list);
@@ -21,6 +27,7 @@ if (cart_list != null) {
 
 session.setAttribute("auth", auth);
 %>
+
 
 <!DOCTYPE html>
 <html>
@@ -128,6 +135,23 @@ body {
 			}
 			%>
 		</div>
+
+		<ul class="pagination" id="pagination">
+			<%
+			int totalPages = (int) Math.ceil((double) totalProducts / productsPerPage);
+			for (int i = 1; i <= totalPages; i++) {
+				if (i == currentPage) {
+			%>
+			<li class="active"><a href="?page=<%=i%>"><%=i%></a></li>
+			<%
+			} else {
+			%>
+			<li><a href="?page=<%=i%>"><%=i%></a></li>
+			<%
+			}
+			}
+			%>
+		</ul>
 	</div>
 	<%@include file="includes/footer.jsp"%>
 

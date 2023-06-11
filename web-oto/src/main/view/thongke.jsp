@@ -76,7 +76,7 @@ button:hover {
 </style>
 </head>
 <body>
-	<%@include file="../includes/tieude.jsp"%>
+	<%@include file="./includes/tieude.jsp"%>
 	<div class="table-container">
 		<button class="btn-table">Thống kê theo số lượng sản phẩm đã
 			bán được</button>

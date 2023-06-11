@@ -62,7 +62,7 @@ body {
 		</ul>
 
 		<div class="searchcar">
-			<form class="search" action="search.jsp" method="GET">
+			<form class="search" action="search-car" method="GET">
 				<input class="tkxe" type="text" name="keyword"
 					placeholder="Search car....."> <input class="btn-search"
 					type="submit" value="Search">
@@ -96,9 +96,13 @@ body {
 			%>
 			<div class="box-content">
 				<div class="card">
-					<img class="card-img-top" src="./product-images/<%=p.getImage()%>">
+					<a href="comment.jsp?productId=<%=p.getId()%>"> <img
+						class="card-img-top" src="./product-images/<%=p.getImage()%>">
+					</a>
 					<div class="card-body">
-						<h5 class="card-title"><%=p.getName()%></h5>
+						<a href="comment.jsp?productId=<%=p.getId()%> ">
+							<h5 class="card-title"><%=p.getName()%></h5>
+						</a>
 
 						<h6 class="price">
 							$

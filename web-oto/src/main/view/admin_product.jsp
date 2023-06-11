@@ -44,7 +44,7 @@ ResultSet resultSet = statement.executeQuery(selectQuery);
 	<div class="body">
 		<div class="container">
 			<div class="form-container">
-				<form method="post" action="#" enctype="multipart/form-data">
+				<form method="post" action="create-product">
 					<h2>Create Product</h2>
 					<label for="name">Name:</label> <input type="text" id="name"
 						name="name" required><br> <br> <label
@@ -90,9 +90,9 @@ ResultSet resultSet = statement.executeQuery(selectQuery);
 							alt="Product Image"></td>
 						<td><div class="action-buttons">
 								<a class="edit-button"
-									href="edit.jsp?id=<%=resultSet.getInt("id")%>">Edit</a> <a
+									href="edit-product?id=<%=resultSet.getInt("id")%>">Edit</a> <a
 									class="delete-button"
-									href="delete.jsp?id=<%=resultSet.getInt("id")%>"
+									href="delete-product?id=<%=resultSet.getInt("id")%>"
 									onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
 							</div></td>
 					</tr>
@@ -103,6 +103,5 @@ ResultSet resultSet = statement.executeQuery(selectQuery);
 			</div>
 		</div>
 	</div>
-	<script src="./js/admin_product.js"></script>
 </body>
 </html>

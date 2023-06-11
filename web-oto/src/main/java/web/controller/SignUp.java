@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import web.connection.DbCon;
 import web.dao.UserDao;
 import web.model.User;
+import web.until.MaHoa;
 
 /**
  * Servlet implementation class SignUp
@@ -45,7 +46,7 @@ public class SignUp extends HttpServlet {
 		    request.setAttribute("ten", ten);
 		    request.setAttribute("email", email);
 		    request.setAttribute("matKhau", matKhau);
-
+		    matKhau = MaHoa.toMD5(matKhau);
 		    String url = "";
 
 		    UserDao userDao = new UserDao(DbCon.getConnection());

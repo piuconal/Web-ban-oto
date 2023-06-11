@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import web.connection.DbCon;
 import web.dao.UserDao;
 import web.model.User;
+import web.until.MaHoa;
 
 /**
  * Servlet implementation class LoginServlet
@@ -34,6 +35,7 @@ public class LoginServlet extends HttpServlet {
 		try (PrintWriter out = response.getWriter()) {
 			String email = request.getParameter("Login-email");
 			String password = request.getParameter("Login-password");
+			password = MaHoa.toMD5(password);
 			try {
 				UserDao udao = new UserDao(DbCon.getConnection());
 				User user = udao.userLogin(email, password);

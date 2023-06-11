@@ -48,8 +48,7 @@ public class CheckOutServlet extends HttpServlet {
 				}
 
 				cart_list.clear();
-				request.getRequestDispatcher("order.jsp").forward(request, response); // Thực hiện chuyển hướng bằng
-																						// forward
+				request.getRequestDispatcher("order.jsp").forward(request, response);
 			} else {
 				if (auth == null) {
 					response.sendRedirect("login.jsp");
@@ -62,13 +61,8 @@ public class CheckOutServlet extends HttpServlet {
 		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

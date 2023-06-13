@@ -28,6 +28,7 @@ List<Product> products = productDao.getAllProducts();
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="icon" href="./product-images/icontab.png">
 <style>
 .table-container {
 	display: flex;

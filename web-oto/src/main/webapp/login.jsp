@@ -13,6 +13,7 @@ if (auth != null) {
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
+<link rel="icon" href="./product-images/icontab.png">
 </head>
 
 <style>

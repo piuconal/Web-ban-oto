@@ -109,6 +109,46 @@ public class OrderDao {
 		return orders;
 	}
 
+	public void changeStatus(int id) {
+		try {
+			 String query = "UPDATE sql9624488.orders SET  o_status = ? WHERE o_id = ?";
+			 pst = this.con.prepareStatement(query);
+			 pst.setString(1, "Confirmed");
+			 pst.setInt(2, id);
+			 int rowsUpdated = pst.executeUpdate();
+			 
+		}catch (Exception e){
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+	}
+	public void acceptPayment(int id) {
+		try {
+			String query = "UPDATE sql9624488.orders SET o_status = ? , o_payment = ? WHERE o_id = ?";
+			pst = this.con.prepareStatement(query);
+			pst.setString(1,"Done");
+			pst.setString(2,"Done");
+			pst.setInt(3, id);
+			int rowsUpdated = pst.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+	}
+	public void cancelStatus(int id) {
+		try {
+			String query = "UPDATE sql9624488.orders SET o_status = ?, o_payment = ? WHERE o_id = ?";
+			pst = this.con.prepareStatement(query);
+			pst.setString(1,"Canceled");
+			pst.setString(2,"Canceled");
+			pst.setInt(3, id);
+			int rowsUpdate = pst.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+		}
+	}
 ///---vu dung---////
 	public List<Order> getAllOrdersProductNames() {
 		List<Order> orders = new ArrayList<>();

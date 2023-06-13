@@ -1,5 +1,3 @@
-
-
 <%@page import="java.util.ArrayList"%>
 <%@ page import="web.connection.DbCon"%>
 <%@ page import="web.model.*"%>
@@ -61,9 +59,13 @@ List<Order> orders = orderDao.getAllOrders();
 					<td><%=order.getName()%></td>
 					<td><%=order.getPrice()%></td>
 					<td><%=order.getDate()%></td>
-					<td><button class="btn btn-confirm"><%=order.getStatus()%></button></td>
+					<td><a class= "link-status" href ="change-status?id=<%=order.getOrderId()%>" onclick="return confirm('Bạn có muốn xác nhận đơn hàng này không?')"><button class="btn btn-confirm"><%=order.getStatus()%></button></a></td>
+					<td><a class = "link-cancel" href ="cancel-status?id=<%=order.getOrderId()%>" onclick="return confirm('Bạn có muốn hủy đơn hàng này không?')"><button class="btn btn-cancel">Cancel</button></a></td>
+					<td><a class = "link-payment" href ="accept-payment?id=<%=order.getOrderId()%>" onclick="return confirm('Bạn có muốn xác nhận đơn hàng này đã thanh toán không?')"><button class="btn btn-payment"><%=order.getPayment()%></button></a></td>
+					<%-- <td><button class="btn btn-confirm"><%=order.getStatus()%></button></td>
 					<td><button class="btn btn-cancel">Cancel</button></td>
-					<td><button class="btn btn-status"><%=order.getPayment()%></button></td>
+					<td><button class="btn btn-status"><%=order.getPayment()%></button></td> --%>
+					
 				</tr>
 				<%
 				}
@@ -92,7 +94,7 @@ List<Order> orders = orderDao.getAllOrders();
 			</div>
 		</div>
 	</div>
-	<div id="confirmCancel" class="popup">
+	<div id="confirmCancel" class="popup"> 
 		<div class="popup-content">
 			<h2>Xác nhận hủy đơn hàng</h2>
 			<p>Bạn có chắc chắn muốn hủy đơn hàng này ?</p>
@@ -101,11 +103,11 @@ List<Order> orders = orderDao.getAllOrders();
 				<button class="btn" id="btn-cancel-cancel">Hủy</button>
 			</div>
 		</div>
-	</div>
+	</div> 
 
 </body>
 <script src="./js/a_order.js">
-	
+	<!-- <script src = "./js/ts.js"> -->
 </script>
 </html>
 

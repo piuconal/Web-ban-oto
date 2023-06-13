@@ -1,6 +1,6 @@
 Bài tập lớn - Lập trình Web - NHÓM 02
 
-Vũ Trọng Hiếu : Product Management(CRUD) + Cart + Host
+Vũ Trọng Hiếu : Product Management(CRUD) + Cart + Server
 
 Bùi Minh Vũ   : Order Management(Status/Pay)
 

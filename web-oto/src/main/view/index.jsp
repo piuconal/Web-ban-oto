@@ -69,7 +69,7 @@ body {
 		</ul>
 
 		<div class="searchcar">
-			<form class="search" action="search-car" method="GET">
+			<form class="search" action="search.jsp" method="GET">
 				<input class="tkxe" type="text" name="keyword"
 					placeholder="Search car....."> <input class="btn-search"
 					type="submit" value="Search">

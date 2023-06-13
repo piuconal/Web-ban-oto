@@ -4,8 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Thông báo</title>
-<link rel="icon" href="./product-images/icontab.png">
+<title>Insert title here</title>
 </head>
 <body>
 <h1>Chúc mừng bạn đã đăng ký tài khoản thành công! Vui lòng quay lại trang đăng nhập.</h1>

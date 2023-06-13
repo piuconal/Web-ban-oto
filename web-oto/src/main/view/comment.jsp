@@ -103,7 +103,6 @@ form button[type="submit"] {
 	margin: -29% 0 0 55%;
 }
 </style>
-<link rel="icon" href="./product-images/icontab.png">
 </head>
 
 <body>

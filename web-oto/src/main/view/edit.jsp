@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <title>Edit Product</title>
     <link rel="stylesheet" href="./css/edit.css">
-    <link rel="icon" href="./product-images/icontab.png">
 </head>
 <%
 User auth = (User) request.getSession().getAttribute("admin");
